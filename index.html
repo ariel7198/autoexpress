@@ -74,7 +74,8 @@ g<!DOCTYPE html>
         }
         .jumbotron {
 /*            background-color: #31A2F2;*/
-            background-image: url(https://static.tumblr.com/jjqbi6t/LiMpc54pl/capa.png);
+            
+            background-image: linear-gradient(rgba(13,13,13,.55),rgba(13,13,13,.55)), url(https://static.tumblr.com/jjqbi6t/LiMpc54pl/capa.png);
             background-repeat: no-repeat;
             background-size: cover;
             background-attachment: fixed;
@@ -107,7 +108,7 @@ g<!DOCTYPE html>
             color: #31A2F2;
         }
         .carousel-indicators li {
-            border-color: 31A2F2;
+            border-color: #31A2F2;
         }
         .carousel-indicators li.active {
             background-color: 31A2F2;
@@ -128,7 +129,8 @@ g<!DOCTYPE html>
             font-style: normal;
         }
         footer {
-            background-color: white;
+            background-color: #134568;
+            color: white;
         }
         footer .glyphicon {
             font-size: 20px;
@@ -168,6 +170,14 @@ g<!DOCTYPE html>
                 -webkit-transform: translateY(0%);
             }
         }
+        #animate {
+            position: relative;
+            height: 5px;
+        }
+        .aviao {
+            height: 5px;
+        }
+
 
 </style>
     <script>
@@ -226,6 +236,31 @@ g<!DOCTYPE html>
     
     
     </script>
+<!--  CAMINHAO tem que corrigir
+    <script>
+         $(document).ready(function(e) {
+        var width = $(document).width();
+
+        function goRight() {
+            $("#animate").animate({
+            left: width
+          }, 5000, function() {
+             setTimeout(goLeft, 50);
+          });
+        }
+        function goLeft() {
+            $("#animate").animate({
+            left: 0
+          }, 5000, function() {
+             setTimeout(goRight, 50);
+          });
+        }
+
+        setTimeout(goRight, 50);
+    });
+    </script>
+-->
+
 </head>
     <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
         <!-- esse era do plugin do facebook, mas tem que ver ainda -->
@@ -263,6 +298,9 @@ g<!DOCTYPE html>
         <div class="jumbotron text-center" cla>
             <p>Qualidade e rapidez</p>
             <h1>Auto Express</h1>
+        </div>
+        <div class="container aviao"> 
+            <div id="animate"> <img src="images/truck.png" height="50px" width="50px"> </div>
         </div>
         
         <div id="sobre" class="container-fluid">
@@ -437,12 +475,14 @@ g<!DOCTYPE html>
             <br>
             <div class="row">
                 <div class="col-sm-4 slideanim">
-                    <p> Curta nossa página no Facebook </p>
-                    <button type="button" class="btn btn-primary"> Curtir </button>
-                    <br>
+                    <div class="row"> 
+                        <p> Curta nossa página no Facebook </p>
+                        <button type="button" class="btn btn-primary"> Curtir </button> 
+                    </div>
+                    <div class="row">
                     <p> Faça parte de nosso Trucksbook </p>
-                    <button type="button" class="btn btn-primary"> <a href="https://trucksbook.eu/company/13803"> Solicitar</a> </button>
-                    
+                    <button type="button" class="btn btn-primary"> <a href="https://trucksbook.eu/company/13803"> Solicitar</a> </button> </div>
+                     
                 </div>
                 <div class="col-sm-3 slideanim">
                     <p> Entre em contato com os administradores: </p>
@@ -457,11 +497,18 @@ g<!DOCTYPE html>
         </div>
         
         <footer class="container-fluid text-center">
-            Volta ao início <br>
-            <a href="#myPage" title="inicio"> 
-                <span class="glyphicon glyphicon-chevron-up"></span>
-            </a>
-            <p> Empresa Auto Express, 2018 </p>
+            <div class="row">
+                <div class="col-sm-6">
+                Auto Express Logistica™ <br> 2018 <br>
+                    trucksbook.eu/company/13803
+                    
+                </div>
+                <div class="col-sm-6">
+                <img class="img-circle" src="images/logo.png" height="150px">
+                </div>
+                
+            
+            </div>
         </footer>
 
     </body>
