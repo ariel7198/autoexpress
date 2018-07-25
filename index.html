@@ -18,7 +18,8 @@ g<!DOCTYPE html>
         .navbar {
             margin-bottom: 0;
 /*            box-shadow: 2px 2px 2px #56595c;*/
-            background-color: #31A2F2;
+/*            background-color: #31A2F2;*/
+            background-color:  #134568;
             z-index: 9999;
             border: 0;
             font-size: 12px !important;
@@ -33,7 +34,7 @@ g<!DOCTYPE html>
             transition: background-color 0.1s , color 0.2s ease-in-out;
         }
         .navbar-nav li a:hover, .navbar-nav li.active a {
-            color: #31A2F2 !important;
+            color: #134568 !important;
             background-color: #fff !important;
             transition-timing-function: ease-in;
             
@@ -43,11 +44,12 @@ g<!DOCTYPE html>
             color: #fff !important;
         }
         .logo-small {
-          color: #31A2F2;
-          font-size: 60px;
+          color: #134568;
+          font-size: 40px;
+            
         }
         .logo {
-          color: #31A2F2;
+          color: #134568;
           font-size: 200px;
         }
         @media screen and (max-width: 786px){
@@ -64,12 +66,14 @@ g<!DOCTYPE html>
             -webkit-transition: 0.1s ease-in-out;
             -moz-transition: 0.1s ease-in-out;
             transition: height 0.1s, margin-left 0.1s, color 0.2s ease-in-out;
+            
         }
         .logo-diferente{
             height: 100px;
             transition-timing-function: ease-in;
 /*            background-color: #31A2F2;*/
-            background-color: transparent;
+            background-color: white;
+            box-shadow: 2px 2px 2px #232323;
             
         }
         .jumbotron {
@@ -129,13 +133,13 @@ g<!DOCTYPE html>
             font-style: normal;
         }
         footer {
-            background-color: #134568;
-            color: white;
+            background-color: white;
+            color: #134568;
         }
         footer .glyphicon {
             font-size: 20px;
             margin-bottom: 20px;
-            color: #31A2F2;
+            color: #134568;
         }
         .slideanim {visibility:hidden;}
         .slide {
@@ -148,6 +152,27 @@ g<!DOCTYPE html>
             /* Make the element visible */
             visibility: visible; 
         }
+        .panel-heading{
+            padding: 0;
+        }
+        .panel {
+            box-shadow: 1px 1px 1px #f2f2f2;
+        }
+        .btn-steam{
+            background-color: #134568;
+            padding: 10px 20px;
+            color: #f1f1f1;
+            border-radius: 2px;
+            transition: .2s;
+            border: none;
+        }
+        .btn-steam:hover, .btn-steam:focus {
+/*          border: 1px solid #333;*/
+            background-color: white;
+            color: #000;
+            box-shadow: 1px 1px 1px #f2f2f2;
+        }
+        
 
         /* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
         @keyframes slide {
@@ -214,7 +239,7 @@ g<!DOCTYPE html>
             jQuery(window).scroll(function () {
                 if (jQuery(this).scrollTop() > 690) {
                     $(".aex-logo").addClass("logo-diferente");
-                    $(".aex-logo").removeClass("img-circle")
+                    //$(".aex-logo").removeClass("img-circle")
                 } else {
                     $(".aex-logo").removeClass("logo-diferente");
                     $(".aex-logo").addClass("img-circle")
@@ -236,7 +261,7 @@ g<!DOCTYPE html>
     
     
     </script>
-<!--  CAMINHAO tem que corrigir
+<!--
     <script>
          $(document).ready(function(e) {
         var width = $(document).width();
@@ -248,18 +273,12 @@ g<!DOCTYPE html>
              setTimeout(goLeft, 50);
           });
         }
-        function goLeft() {
-            $("#animate").animate({
-            left: 0
-          }, 5000, function() {
-             setTimeout(goRight, 50);
-          });
-        }
 
         setTimeout(goRight, 50);
     });
     </script>
 -->
+
 
 </head>
     <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -363,38 +382,7 @@ g<!DOCTYPE html>
             </div>
         
         </div>
-        
-<!--
         <div class="container-fluid text-center bg-grey slideanim">
-            <h2> Frota </h2> <hr>
-            <h4> A empresa conta com blablabla sobre os caminhão </h4>
-            <div class="row text-center">
-                <div class="col-sm-4">
-                    <div class="tumbnail slideanim">
-                        <img src="https://static.tumblr.com/jjqbi6t/diqpc558k/gefgvgt.jpg" alt="Funcionários" class="img-responsive">
-                        <p> <strong> Funcionarios </strong></p>
-                        <p> Texto </p>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="tumbnail slideanim">
-                        <img src="https://i.imgur.com/nxv36P1g.jpg" alt="Funcionarios">
-                        <p> <strong> Funcionarios </strong></p>
-                        <p> Texto </p>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="tumbnail slideanim">
-                        <img src="https://i.imgur.com/nxv36P1g.jpg" alt="Funcionarios">
-                        <p> <strong> Funcionarios </strong></p>
-                        <p> Texto </p>
-                    </div>
-                </div>
-            </div>
-        
-        </div>
--->
-                <div class="container-fluid text-center bg-grey slideanim">
             <h2> Frota </h2> <hr>
             <h4> A empresa conta com blablabla sobre os caminhão </h4>
             <div class="row text-center">
@@ -469,7 +457,145 @@ g<!DOCTYPE html>
             </div>
         </div>
         
-        <div id="contato" class="container-fluid bg-grey">
+        <div class="container-fluid text-center bg-grey">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <img src="images/rinaldo.jpeg" width="100%">
+                        </div>
+                        <div class="panel-body">
+                         Rinaldo é um cara muito top que ganhas os eventos da empresa e acumula DLCS
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn-steam">
+                               <span class="glyphicon glyphicon-plus"> </span>  Adicionar na Steam 
+                            </button>
+                        </div>
+                    
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <img src="images/rinaldo.jpeg" width="100%">
+                        </div>
+                        <div class="panel-body">
+                         Rinaldo é um cara muito top que ganhas os eventos da empresa e acumula DLCS
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn-steam">
+                               <span class="glyphicon glyphicon-plus"> </span>  Adicionar na Steam 
+                            </button>
+                        </div>
+                    
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <img src="images/rinaldo.jpeg" width="100%">
+                        </div>
+                        <div class="panel-body">
+                         Rinaldo é um cara muito top que ganhas os eventos da empresa e acumula DLCS
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn-steam">
+                               <span class="glyphicon glyphicon-plus"> </span>  Adicionar na Steam 
+                            </button>
+                        </div>
+                    
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <img src="images/rinaldo.jpeg" width="100%">
+                        </div>
+                        <div class="panel-body">
+                         Rinaldo é um cara muito top que ganhas os eventos da empresa e acumula DLCS
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn-steam">
+                               <span class="glyphicon glyphicon-plus"> </span>  Adicionar na Steam 
+                            </button>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-sm-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <img src="images/rinaldo.jpeg" width="100%">
+                        </div>
+                        <div class="panel-body">
+                         Rinaldo é um cara muito top que ganhas os eventos da empresa e acumula DLCS
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn-steam">
+                               <span class="glyphicon glyphicon-plus"> </span>  Adicionar na Steam 
+                            </button>
+                        </div>
+                    
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <img src="images/rinaldo.jpeg" width="100%">
+                        </div>
+                        <div class="panel-body">
+                         Rinaldo é um cara muito top que ganhas os eventos da empresa e acumula DLCS
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn-steam">
+                               <span class="glyphicon glyphicon-plus"> </span>  Adicionar na Steam 
+                            </button>
+                        </div>
+                    
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <img src="images/rinaldo.jpeg" width="100%">
+                        </div>
+                        <div class="panel-body">
+                         Rinaldo é um cara muito top que ganhas os eventos da empresa e acumula DLCS
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn-steam">
+                               <span class="glyphicon glyphicon-plus"> </span>  Adicionar na Steam 
+                            </button>
+                        </div>
+                    
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <img src="images/rinaldo.jpeg" width="100%">
+                        </div>
+                        <div class="panel-body">
+                         Rinaldo é um cara muito top que ganhas os eventos da empresa e acumula DLCS
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn-steam">
+                               <span class="glyphicon glyphicon-plus"> </span>  Adicionar na Steam 
+                            </button>
+                        </div>
+                    
+                    </div>
+                </div>
+            
+            </div>
+
+        </div>
+        
+        
+        <div id="contato" class="container-fluid">
             <h2 class="text-center"> Contato </h2>
             <hr>
             <br>
@@ -496,7 +622,7 @@ g<!DOCTYPE html>
             </div>
         </div>
         
-        <footer class="container-fluid text-center">
+        <footer class="container-fluid text-center bg-grey">
             <div class="row">
                 <div class="col-sm-6">
                 Auto Express Logistica™ <br> 2018 <br>
