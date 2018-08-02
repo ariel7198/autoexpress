@@ -1,0 +1,201 @@
+g<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> Auto Express Logística </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/recrutamento.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="shortcut icon" href="images/logo.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    
+    <script>
+    $(document).ready(function(){
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+           // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 600, function(){
+
+              // Add hash (#) to URL when done scrolling (default click behavior)
+              window.location.hash = hash;
+              });
+            } // End if
+          });
+    })
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        jQuery(function () {
+            jQuery(window).scroll(function () {
+                if (jQuery(this).scrollTop() > 690) {
+                    $(".aex-logo").addClass("logo-diferente");
+                    //$(".aex-logo").removeClass("img-circle")
+                } else {
+                    $(".aex-logo").removeClass("logo-diferente");
+                    $(".aex-logo").addClass("img-circle")
+                }
+            });
+        });
+    </script>
+    <script> 
+    $(window).scroll(function() {
+        $(".slideanim").each(function(){
+            var pos = $(this).offset().top;
+
+            var winTop = $(window).scrollTop();
+            if (pos < winTop + 600) {
+                $(this).addClass("slide");
+            }
+        });
+    });
+    
+    
+    </script>
+    <script>
+    $(function() {
+    var img = $("#animate"),
+        width = img.get(0).width,
+        screenWidth = $(window).width(),
+        duration = 5000;
+
+    function animatePlane() {
+        img.css("left", -width)
+           .animate({
+                "left": screenWidth
+            }, duration, animatePlane);
+    }
+
+    animatePlane();
+    }); </script>
+    <script>
+    // Select all elements with data-toggle="popover" in the document
+$('[data-toggle="popover"]').popover(); 
+
+// Select a specified element
+$('#myPopover').popover();
+    </script>
+
+</head>
+<!--    <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">-->
+    
+    <body>
+        
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="colapse" data-target="#myNavbar"> 
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"> <img src="images/logo.png" class="aex-logo img-circle"> </a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li> <a href="index.html"> INÍCIO </a></li>
+                    
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="jumbotron text-center" cla>
+            <p>Trabalhe conosco</p>
+            <h1>Recrutamento</h1>
+        </div>
+        <div class="container aviao"> 
+            <div id="animate"> <img src="images/truck.png" height="50px" width="50px"> </div>
+        </div>
+        
+        <div id="sobre" class="container-fluid">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h2> O que buscamos:</h2>
+                    <h4> Blabla </h4>
+                    <p> blabla mais longo</p>
+                    
+                </div>
+                <div class="col-sm-4">
+<!--                    <span class="glyphicon glyphicon-road logo"></span> -->
+                    <img src="images/logo.png" height="300px" width="300px">
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div id="servicos" class="container-fluid text-center slideanim">
+            <h2 class="exigencias"> O que exigimos </h2> <hr>
+            <h4 class="exigencias"> Você precisa: </h4>
+            <br>
+            <style>
+            .logo-small
+            </style>
+            
+            <div class="row slideanim">
+                <div class="col-sm-4">
+                  <span class="logo-small"> <img src="images/ets-logo.png" height="50px"></span>
+                  <h4> Possuir ETS2 ou ATS </h4>
+                    <p> Você precisa possuir uma cópia original do game. Comboios fazem parte da empresa e para utilizar o TruckersMP você precisa possuir o game na Steam.</p>
+                    
+                </div>
+                <div class="col-sm-4">
+                  <span class="logo-small"> <img src="images/trucksbook-icon.png" height="40px"></span>
+                  <h4> Usar Trucksbook </h4>
+                  <p>Para manter a organização da empresa e auxiliar no crescimento da mesma, exigimos o uso do Truckbook </p>
+                </div>
+                <div class="col-sm-4">
+                  <span class="glyphicon glyphicon-road logo-small"></span>
+                  <h4>Mínimo de 5000KM semanais</h4>
+                  <p>Para participar dos eventos da empresa, é necessário cumprir uma meta de 5000Km semanais</p>
+                </div>
+                
+            </div>
+        
+        </div>
+        
+        
+        
+        <div d="contato" class="container-fluid">
+            <h2 class="text-center"> Participe </h2>
+            <hr>
+            <br>
+            <div class="row">
+                
+            </div>
+        </div>
+        
+        <footer class="container-fluid text-center bg-grey">
+            <div class="row align-items-center">
+                <div class="col-sm-6">
+                Auto Express Logistica™ <br> 2018 <br>
+                    trucksbook.eu/company/13803
+                    
+                </div>
+                <div class="col-sm-6">
+                <img class="img-circle" src="images/logo.png" height="120px">
+                </div>
+                
+            
+            </div>
+        </footer>
+
+    </body>
+</html>
