@@ -71,7 +71,7 @@
         .jumbotron {
 /*            background-color: #31A2F2;*/
             
-            background-image: linear-gradient(rgba(13,13,13,.55),rgba(13,13,13,.55)), url(https://static.tumblr.com/jjqbi6t/LiMpc54pl/capa.png);
+            background-image: linear-gradient(rgba(13,13,13,.55),rgba(13,13,13,.55)), url( https://static.tumblr.com/jjqbi6t/SlOpcycx0/aes-truck2.jpg);
             background-repeat: no-repeat;
             background-size: cover;
             background-attachment: fixed;
