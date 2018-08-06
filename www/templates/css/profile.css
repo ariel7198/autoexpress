@@ -160,3 +160,21 @@
     padding: 0;
 }
 
+
+.modal-header {
+    background-color: #134568;
+    color: white;
+    text-align: center;
+    font-family: arial;
+
+}
+
+.modal-body {
+    font-family: sans-serif;
+    letter-spacing: 0.3px;
+    font-size: 1.4rem;
+}
+
+.modal {
+    
+}
