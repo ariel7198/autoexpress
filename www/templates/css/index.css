@@ -56,8 +56,18 @@
             -webkit-transition: 0.1s ease-in-out;
             -moz-transition: 0.1s ease-in-out;
             transition: height 0.1s, margin-left 0.1s, color 0.2s ease-in-out;
-            
         }
+            @media screen and (max-width: 768px){
+                .aex-logo{
+                    margin-top: -25px;
+                    height: 70px;
+                    transition-timing-function: ease-in;
+        /*            background-color: #31A2F2;*/
+                    background-color: white;
+                    box-shadow: 2px 2px 2px #232323;
+
+                }
+            }
         .logo-diferente{
             height: 100px;
             transition-timing-function: ease-in;
