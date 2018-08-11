@@ -155,12 +155,13 @@
         
 /*        CARDS FUNCIONARIOS */
         .panel-heading{
-            padding: 0;
+/*            height: 10%;*/
         }
         
         .panel {
             box-shadow: 1px 1px 1px #f2f2f2;
             margin: 10px;   
+            height: 500px;
         }
         .btn-steam{
             background-color: #134568;
@@ -219,5 +220,31 @@
         }
 
 .panel-body {
-    min-height: 170px;
+/*    min-height: 170px;*/
+/*
+    padding-right: 0;
+    padding-left: 0;
+    padding-top: 0;
+*/
+/*    height: 70%;*/
+}
+
+.motoristas {
+        background-color: #134568;
+        padding: 10px 20px;
+        color: #f1f1f1;
+        border-radius: 2px;
+        transition: .2s;
+        border: none;
+}
+.motoristas:hover{
+    background-color: white;
+    color: #134568;
+}
+.motoristas:active{
+    background-color: red;
+}
+
+.panel-footer {
+/*    height: 20%;*/
 }

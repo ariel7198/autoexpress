@@ -45,6 +45,7 @@
         jQuery(function () {
             jQuery(window).scroll(function () {
                 if (jQuery(this).scrollTop() > 690) {
+                    if (window.innerWidth > 768)
                     $(".aex-logo").addClass("logo-diferente");
                     //$(".aex-logo").removeClass("img-circle")
                 } else {
@@ -114,7 +115,7 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
                         <li> <a href="#sobre"> SOBRE </a></li>
-                        <li> <a href="#servicos"> SERVIÇOS E COMBOIOS </a></li>
+                        <li> <a href="#servicos"> COMBOIOS </a></li>
                         <li> <a href="#contato"> CONTATO </a></li>
                         <li> <a href="recrutamento.html"> RECRUTAMENTO </a></li>
                         
@@ -252,14 +253,21 @@ Trabalhe conosco.
         <div class="container-fluid text-center bg-grey">
             <h2> Colaboradores motoristas </h2>
             <hr>
-            <div class="row">
-                <div class="col-sm-3">
+            
+              <a class="btn btn-default btn-block motoristas" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Visualizar motoristas <span class="glyphicon glyphicon-chevron-down"></span>
+              </a>
+            
+            <div class="collapse" id="collapseExample">
+              
+                <div class="row">
+                <div class="col-sm-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <img src="images/rinaldo.jpeg" width="100%">
+                            Rinaldo Silva, 50 anos
                         </div>
                         <div class="panel-body">
-                        Rinaldo é mt lindo
+                        <img src="images/rinaldo.jpeg" class="img-circle" width="100%"> <hr> Rinaldo é mt lindo
                         </div>
                         <div class="panel-footer">
                             <button class="btn-steam">
@@ -269,12 +277,30 @@ Trabalhe conosco.
                     
                     </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <img src="images/rinaldo.jpeg" class="img-circle" width="100%">
+                            Tiago Oliveira, 26 anos
                         </div>
                         <div class="panel-body">
+                            <img src="images/rinaldo.jpeg" class="img-circle" width="100%"> 
+                         Natural de Tanguá, cidade do estado do Rio de janeiro, recém contratado na empresa AutoExpress, a dois anos decidiu ser caminhoneiro e rodar estrada a foras.
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn-steam">
+                               <span class="glyphicon glyphicon-plus"> </span>  Adicionar na Steam 
+                            </button>
+                        </div>
+                    
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            João Antônio Alves Fernandes, 0 anos
+                        </div>
+                        <div class="panel-body">
+                           <img src="images/rinaldo.jpeg" class="img-circle" width="100%">  
                          Rinaldo é um cara muito top que ganhas os eventos da empresa e acumula DLCS
                         </div>
                         <div class="panel-footer">
@@ -285,46 +311,34 @@ Trabalhe conosco.
                     
                     </div>
                 </div>
-                <div class="col-sm-3">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <img src="images/rinaldo.jpeg" class="img-circle" width="100%">
-                        </div>
-                        <div class="panel-body">
-                         Rinaldo é um cara muito top que ganhas os eventos da empresa e acumula DLCS
-                        </div>
-                        <div class="panel-footer">
-                            <button class="btn-steam">
-                               <span class="glyphicon glyphicon-plus"> </span>  Adicionar na Steam 
-                            </button>
-                        </div>
-                    
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <img src="images/rinaldo.jpeg"  class="img-circle" width="100%">
-                        </div>
-                        <div class="panel-body">
-                         Rinaldo é um cara muito top que ganhas os eventos da empresa e acumula DLCS
-                        </div>
-                        <div class="panel-footer">
-                            <button class="btn-steam">
-                               <span class="glyphicon glyphicon-plus"> </span>  Adicionar na Steam 
-                            </button>
-                        </div>
-                    
-                    </div>
-                </div>
+                
             </div>
+            
             <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <img src="images/rinaldo.jpeg"  class="img-circle" width="100%">
+                            Kevin Prince, 0 anos
                         </div>
                         <div class="panel-body">
+                            <img src="images/rinaldo.jpeg"  class="img-circle" width="100%">
+                         Tipo do cara que gosta de fazer viagens longas e em alta velocidade, mas sempre respeitando as sinalizações principalmente, meu caminhão preferido e Mercedez benz, e o país preferido é a italia !
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn-steam">
+                               <span class="glyphicon glyphicon-plus"> </span>  Adicionar na Steam 
+                            </button>
+                        </div>
+                    
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            
+                        </div>
+                        <div class="panel-body">
+                            <img src="images/rinaldo.jpeg"  class="img-circle" width="100%">
                          Rinaldo é um cara muito top que ganhas os eventos da empresa e acumula DLCS
                         </div>
                         <div class="panel-footer">
@@ -335,12 +349,13 @@ Trabalhe conosco.
                     
                     </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <img src="images/rinaldo.jpeg"  class="img-circle" width="100%">
+                            
                         </div>
                         <div class="panel-body">
+                            <img src="images/rinaldo.jpeg"  class="img-circle" width="100%">
                          Rinaldo é um cara muito top que ganhas os eventos da empresa e acumula DLCS
                         </div>
                         <div class="panel-footer">
@@ -351,40 +366,12 @@ Trabalhe conosco.
                     
                     </div>
                 </div>
-                <div class="col-sm-3">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <img src="images/rinaldo.jpeg"  class="img-circle" width="100%">
-                        </div>
-                        <div class="panel-body">
-                         Rinaldo é um cara muito top que ganhas os eventos da empresa e acumula DLCS
-                        </div>
-                        <div class="panel-footer">
-                            <button class="btn-steam">
-                               <span class="glyphicon glyphicon-plus"> </span>  Adicionar na Steam 
-                            </button>
-                        </div>
-                    
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <img src="images/rinaldo.jpeg"  class="img-circle" width="100%">
-                        </div>
-                        <div class="panel-body">
-                         Rinaldo é um cara muito top que ganhas os eventos da empresa e acumula DLCS
-                        </div>
-                        <div class="panel-footer">
-                            <button class="btn-steam">
-                               <span class="glyphicon glyphicon-plus"> </span>  Adicionar na Steam 
-                            </button>
-                        </div>
-                    
-                    </div>
-                </div>
+                
+            
+            </div>      
             
             </div>
+            
 
         </div>
         
