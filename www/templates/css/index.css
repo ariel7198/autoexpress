@@ -154,9 +154,7 @@
         }
         
 /*        CARDS FUNCIONARIOS */
-        .panel-heading{
-/*            height: 10%;*/
-        }
+        
         
         .panel {
             box-shadow: 1px 1px 1px #f2f2f2;
@@ -220,13 +218,8 @@
         }
 
 .panel-body {
-/*    min-height: 170px;*/
-/*
-    padding-right: 0;
-    padding-left: 0;
-    padding-top: 0;
-*/
-/*    height: 70%;*/
+    padding: 0;
+
 }
 
 .motoristas {
@@ -245,6 +238,66 @@
     background-color: red;
 }
 
-.panel-footer {
-/*    height: 20%;*/
+
+
+.panel-default {
+    height: 100%;
 }
+
+.collapse {
+}
+
+      
+.row-flex, .row-flex > div[class*='col-'] {  
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex:1 1 auto;
+}
+
+.row-flex-wrap {
+	-webkit-flex-flow: row wrap;
+    align-content: flex-start;
+    flex:0;
+}
+
+.row-flex > div[class*='col-'], .container-flex > div[class*='col-'] {
+	 margin:-.2px; /* hack adjust for wrapping */
+}
+
+.container-flex > div[class*='col-'] div,.row-flex > div[class*='col-'] div {
+	width:100%;
+}
+
+
+.flex-col {
+    display: flex;
+    display: -webkit-flex;
+    flex: 1 100%;
+	flex-flow: column nowrap;
+}
+
+.flex-grow {
+	display: flex;
+    -webkit-flex: 2;
+    flex: 2;
+}
+.fb-widget {
+    
+}
+
+#tb-bt {
+    visibility: hidden;
+}
+@media screen and (max-width: 1170px){
+            #tb-bt{
+                visibility: visible;
+            }
+    #tb-bt-hide{
+        visibility: hidden;
+    }
+        }
+
+

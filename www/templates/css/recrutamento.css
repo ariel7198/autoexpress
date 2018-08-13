@@ -153,9 +153,7 @@
             }
         }
 
-.panel-body {
-    min-height: 170px;
-}
+
 .popover {
     border: 2px dotted red;
 }
