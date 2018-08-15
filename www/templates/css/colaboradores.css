@@ -1,0 +1,213 @@
+        body {
+            min-width: 485px;
+            color: #134568;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        .navbar {
+            margin-bottom: 0;
+/*            box-shadow: 2px 2px 2px #56595c;*/
+/*            background-color: #31A2F2;*/
+            background-color:  #134568;
+            z-index: 9999;
+            border: 0;
+            font-size: 12px !important;
+            line-height: 1.42857143 !important;
+            letter-spacing: 4px;
+            border-radius: 0;
+        }
+        .navbar li a, .navbar .navbar-brand{
+            color: #fff !important;
+            -webkit-transition: 0.1s ease-in-out;
+            -moz-transition: 0.1s ease-in-out;
+            transition: background-color 0.1s , color 0.2s ease-in-out;
+        }
+        .navbar-nav li a:hover, .navbar-nav li.active a {
+            color: #134568 !important;
+            background-color: #fff !important;
+            transition-timing-function: ease-in;
+            
+        }
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+            color: #fff !important;
+        }
+        .logo-small {
+          color: #134568;
+          font-size: 40px;
+            
+        }
+        .logo {
+          color: #134568;
+          font-size: 200px;
+        }
+        @media screen and (max-width: 786px){
+            .col-sm-4{
+                text-align: center;
+                margin: 25px 0;
+            }
+        }
+        .aex-logo {
+            height: 150px;
+            margin-top: -36px;
+/*            background-color: #31A2F2;*/
+            background-color: white;
+            -webkit-transition: 0.1s ease-in-out;
+            -moz-transition: 0.1s ease-in-out;
+            transition: height 0.1s, margin-left 0.1s, color 0.2s ease-in-out;
+            
+        }
+        .logo-diferente{
+            height: 100px;
+            transition-timing-function: ease-in;
+/*            background-color: #31A2F2;*/
+            background-color: white;
+            box-shadow: 2px 2px 2px #232323;
+            
+        }
+        .jumbotron {
+/*            background-color: #31A2F2;*/
+            
+            background-image: linear-gradient(rgba(13,13,13,.55),rgba(13,13,13,.55)), url(https://static.tumblr.com/jjqbi6t/r2updiwbk/capa_colaboradores.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            padding: 200px;
+            height: 600px;
+            text-shadow: 1px 1px #383838;
+        }
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+        .container-fluid {
+            padding: 60px 110px;    
+        }
+        .tumbnail {
+            padding: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+        }
+        .tumbnail img {
+            width: 100%; /*tamanho da imagem dentro da div mesmo */
+/*            height: 100%;*/
+            margin-bottom: 10px;
+        }
+        .item h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            font-weight: 400;
+            font-style: italic;
+            margin: 70px 0;
+        }
+        .item span {
+            font-style: normal;
+        }
+        footer {
+            background-color: white;
+            color: #134568;
+            height: 150px;
+/*            border-top: solid 1px #134568;*/
+        }
+        footer .glyphicon {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #134568;
+        }
+        .slideanim {visibility:hidden;}
+        .slide {
+            /* The name of the animation */
+            animation-name: slide;
+            -webkit-animation-name: slide; 
+            /* The duration of the animation */
+            animation-duration: 1s; 
+            -webkit-animation-duration: 1s;
+            /* Make the element visible */
+            visibility: visible; 
+        }
+        
+/*      
+        /* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
+        @keyframes slide {
+            0% {
+                opacity: 0;
+                transform: translateY(70%);
+            } 
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            } 
+        }
+        @-webkit-keyframes slide {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(70%);
+            } 
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0%);
+            }
+        }
+
+
+.popover {
+    border: 2px dotted red;
+}
+/* Popover Header */
+.popover-title {
+    background-color: #73AD21; 
+    color: #FFFFFF; 
+    font-size: 28px;
+    text-align:center;
+}
+
+/* Popover Body */
+.popover-content {
+    background-color: coral;
+    color: #FFFFFF;
+    padding: 25px;
+}
+
+/* Popover Arrow */
+.arrow {
+    border-right-color: red !important;
+}
+
+.exigencias {
+    color: #134568;
+}
+
+        .btn-steam{
+            background-color: #134568;
+            padding: 10px 20px;
+            color: #f1f1f1;
+            border-radius: 2px;
+            transition: .2s;
+            border: none;
+        }
+        @media screen and (max-width: 912px){
+            .btn-steam{
+                padding: 1px 1px;
+            }
+        }
+        @media screen and (max-width: 768px){
+            .btn-steam{
+                padding: 10px 20px;
+            }
+        }
+        
+        .btn-steam:hover, .btn-steam:focus {
+/*          border: 1px solid #333;*/
+            background-color: white;
+            color: #000;
+            box-shadow: 1px 1px 1px #f2f2f2;
+        }
+        
+.text-center {
+    
+}
