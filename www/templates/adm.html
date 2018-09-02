@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> Auto Express Logística |</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+  <link rel="stylesheet" href="css/adm.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+
+  <link rel="shortcut icon" href="images/logo.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    
+    <script>
+    $(document).ready(function(){
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+           // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 600, function(){
+
+              // Add hash (#) to URL when done scrolling (default click behavior)
+              window.location.hash = hash;
+              });
+            } // End if
+          });
+    })
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        jQuery(function () {
+            jQuery(window).scroll(function () {
+                if (jQuery(this).scrollTop() > 130) {
+                    $(".aex-logo").addClass("logo-diferente");
+                    //$(".aex-logo").removeClass("img-circle")
+                } else {
+                    $(".aex-logo").removeClass("logo-diferente");
+                    $(".aex-logo").addClass("img-circle")
+                }
+            });
+        });
+    </script>
+
+    <script>
+    $(function() {
+    var img = $("#animate"),
+        width = img.get(0).width,
+        screenWidth = $(window).width(),
+        duration = 5000;
+
+    function animatePlane() {
+        img.css("left", -width)
+           .animate({
+                "left": screenWidth
+            }, duration, animatePlane);
+    }
+
+    animatePlane();
+    }); </script>
+    <script>
+    // Select all elements with data-toggle="popover" in the document
+$('[data-toggle="popover"]').popover(); 
+
+// Select a specified element
+$('#myPopover').popover();
+    </script>
+
+</head>
+<!--    <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">-->
+    
+    <body>
+        
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="colapse" data-target="#myNavbar"> 
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"> <img src="images/logo.png" class="aex-logo img-circle"> </a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li> <a href="index.html"> INÍCIO </a></li>
+                    
+                    </ul>
+                </div>
+            </div>
+            <div id="modalTrucksbook" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Configuração do Trucksbook </h4>
+                        </div>
+                        <div class="modal-body">
+                            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia, orci id varius iaculis, lacus orci vehicula odio, et vulputate justo velit id tortor. Vivamus congue eu eros non malesuada. Ut volutpat dui odio, lobortis gravida tellus laoreet id. Curabitur ante justo, posuere quis ipsum vel, venenatis pharetra felis. Donec condimentum pellentesque malesuada. Mauris interdum ultricies odio quis scelerisque. Phasellus quam orci, venenatis quis quam nec, porta hendrerit metus. Quisque ut ultricies eros. Mauris ultrices, sem non volutpat aliquet, diam nisi suscipit mi, quis faucibus dui justo tincidunt velit. Donec viverra eget arcu eget fringilla. In non nibh nec dolor consectetur malesuada a vel lacus. </p>
+                            <img src="images/comboio2.png" class="img-responsive"> 
+                            <p> Nam ac nunc nisi. Aenean luctus id nunc molestie gravida. Cras a mauris sit amet sapien aliquam cursus. Donec vestibulum purus vel tincidunt aliquet. Donec odio risus, pretium eu felis non, iaculis faucibus ipsum. Nam rutrum dui ligula, ut efficitur neque congue eu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer cursus finibus massa, vel pretium velit. Suspendisse aliquet dui vel nulla pretium, id gravida quam porta. Nam ut massa et arcu imperdiet tincidunt ultricies congue risus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus consectetur metus vel eros elementum, vel tristique mi vulputate. </p>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="images/comboio1.png" class="img-responsive">
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="images/comboio2.png" class="img-responsive"> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success" data-dismiss="modal">Concluído</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div> <!-- fim modal trucksbook -->
+            <div id="modalCargas" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Configuração do Trucksbook </h4>
+                        </div>
+                        <div class="modal-body">
+                            <form class="login" action="/action_page.php">
+                                <div class="form-group">
+                                    <label for="email">Usuário</label>
+                                    <input type="email" class="form-control" id="email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd">Senha:</label>
+                                    <input type="password" class="form-control" id="pwd">
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox"> Lembrar</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Entrar</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div> <!-- fim modal trucksbook -->
+            <div id="modalPintura" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Configuração do Trucksbook </h4>
+                        </div>
+                        <div class="modal-body">
+                            <form class="login" action="/action_page.php">
+                                <div class="form-group">
+                                    <label for="email">Usuário</label>
+                                    <input type="email" class="form-control" id="email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd">Senha:</label>
+                                    <input type="password" class="form-control" id="pwd">
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox"> Lembrar</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Entrar</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div> <!-- fim modal trucksbook -->
+        </nav>
+        
+        <div id="bem-vindo" class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                <h4 class="text-center"> Seja bem vindo, (nome)</h4>
+                </div>
+            </div>
+        
+        </div>
+        
+        <div id="informacoes" class="container-fluid text-center">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h3> Pendentes </h3>
+                   <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+                </div>
+                <div class="col-sm-4">
+                    <h3> Ultimas aprovações</h3>
+                        <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="text-center"> Aprovações recentes </h4>
+                        </div>
+                        <div class="panel-body">
+                         Administrador Nandinho aprovou Eduardo
+                        </div>
+                        <div class="panel-footer">
+                            <button type="button" class="btn btn-primary">Ver mais</button>
+                        </div>
+                    
+                    </div>
+                </div>
+                   
+        
+                
+                
+            </div>
+        
+        </div>
+        
+        
+        <footer class="container-fluid text-center bg-grey">
+            <div class="row align-items-center">
+                <div class="col-sm-6">
+                Auto Express Logistica™ <br> 2018 <br>
+                    trucksbook.eu/company/13803
+                    
+                </div>
+                <div class="col-sm-6">
+                <img class="img-circle" src="images/logo.png" height="120px">
+                </div>
+                
+            
+            </div>
+        </footer>
+
+    </body>
+</html>
