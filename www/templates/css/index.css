@@ -14,8 +14,15 @@
             border: 0;
             font-size: 12px !important;
             line-height: 1.42857143 !important;
-            letter-spacing: 4px;
+            letter-spacing: 2px;
             border-radius: 0;
+        }
+        @media screen and (max-width: 992px){
+            .navbar li a {
+                letter-spacing: 2px;
+/*                background-color: black;*/
+                transition: letter-spacing 0.1s , background-color 0.2s ease-in-out;
+            }
         }
         .navbar li a, .navbar .navbar-brand{
             color: #fff !important;
@@ -80,6 +87,7 @@
 /*            background-color: #31A2F2;*/
             
             background-image: linear-gradient(rgba(13,13,13,.55),rgba(13,13,13,.55)), url(https://static.tumblr.com/jjqbi6t/LiMpc54pl/capa.png);
+            
             background-repeat: no-repeat;
             background-size: cover;
             background-attachment: fixed;
@@ -158,8 +166,13 @@
         
         .panel {
             box-shadow: 1px 1px 1px #f2f2f2;
+<<<<<<< HEAD
             margin: 10px;   
             height: 500px;
+=======
+            margin: 10px; 
+            
+>>>>>>> a29fc44058466d1c3b19c29e6bec5412b4eb0c99
         }
         .btn-steam{
             background-color: #134568;
@@ -257,6 +270,7 @@
     flex:1 1 auto;
 }
 
+<<<<<<< HEAD
 .row-flex-wrap {
 	-webkit-flex-flow: row wrap;
     align-content: flex-start;
@@ -299,5 +313,17 @@
         visibility: hidden;
     }
         }
+=======
+
+
+.modal-header {
+    background-color: #134568;
+    color: white;
+    text-align: center;
+    font-family: montserrat
+}
+
+
+>>>>>>> a29fc44058466d1c3b19c29e6bec5412b4eb0c99
 
 

@@ -57,7 +57,7 @@
             -webkit-transition: 0.1s ease-in-out;
             -moz-transition: 0.1s ease-in-out;
             transition: height 0.1s, margin-left 0.1s, color 0.2s ease-in-out;
-            
+            box-shadow: 2px 2px 2px #232323;
             
         }
         .logo-diferente{
@@ -67,21 +67,6 @@
             background-color: white;
             box-shadow: 2px 2px 2px #232323;
             
-        }
-        .jumbotron {
-/*            background-color: #31A2F2;*/
-            
-            background-image: linear-gradient(rgba(13,13,13,.55),rgba(13,13,13,.55)), url( https://static.tumblr.com/jjqbi6t/SlOpcycx0/aes-truck2.jpg);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            
-            color: #ffffff;
-            font-family: 'Montserrat', sans-serif;
-            padding: 200px;
-            height: 600px;
-            text-shadow: 1px 1px #383838;
         }
         .bg-grey {
             background-color: #f6f6f6;
@@ -155,39 +140,37 @@
         }
 
 
-.popover {
-    border: 2px dotted red;
+
+
+
+
+
+.panel {
+    background-color: 
+    min-height: 170px;
 }
-/* Popover Header */
-.popover-title {
-    background-color: #73AD21; 
-    color: #FFFFFF; 
-    font-size: 28px;
-    text-align:center;
 }
 
-/* Popover Body */
-.popover-content {
-    background-color: coral;
-    color: #FFFFFF;
-    padding: 25px;
+.panel-heading {
+    padding: 0;
+    background-color: red;
 }
 
-/* Popover Arrow */
-.arrow {
-    border-right-color: red !important;
-}
-
-.exigencias {
-    color: #134568;
+.panel-body {
+    padding: 0;
 }
 
 
+.modal-header {
+    background-color: #134568;
+    color: white;
+    text-align: center;
+    font-family: arial;
 
+}
 
-
-
-
-
-
-
+.modal-body {
+    font-family: sans-serif;
+    letter-spacing: 0.3px;
+    font-size: 1.4rem;
+}
