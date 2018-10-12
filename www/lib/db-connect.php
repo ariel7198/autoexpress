@@ -2,7 +2,7 @@
     
     $_SG['server'] = '127.0.0.1';    // Servidor MySQL
     $_SG['user'] = 'root';         // Usuário MySQL
-    $_SG['password'] = 'root';     // Senha MySQL
+    $_SG['password'] = '';     // Senha MySQL
     $_SG['database'] = 'autoexpress';         // Banco de dados 
                 
                 

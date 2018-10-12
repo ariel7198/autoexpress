@@ -91,7 +91,33 @@ $('[data-toggle="popover"]').popover();
 // Select a specified element
 $('#myPopover').popover();
     </script>
+    
+    <script language="JavaScript">
+     /*
+     A função Mascara tera como valores no argumento os dados inseridos no input (ou no evento onkeypress)
+     onkeypress="mascara(this, '## ####-####')"
+     onkeypress = chama uma função quando uma tecla é pressionada, no exemplo acima, chama a função mascara e define os valores do argumento na função
+     O primeiro valor é o this, é o Apontador/Indicador da Mascara, o '## ####-####' é o modelo / formato da mascara
+     no exemplo acima o # indica os números, e o - (hifen) o caracter que será inserido entre os números, ou seja, no exemplo acima o telefone ficara assim: 11-4000-3562
+     para o celular de são paulo o modelo deverá ser assim: '## #####-####' [11 98563-1254]
+     para o RG '##.###.###.# [40.123.456.7]
+     para o CPF '###.###.###.##' [789.456.123.10]
+     Ou seja esta mascara tem como objetivo inserir o hifen ou espaço automáticamente quando o usuário inserir o número do celular, cpf, rg, etc 
 
+     lembrando que o hifen ou qualquer outro caracter é contado tambem, como: 11-4561-6543 temos 10 números e 2 hifens, por isso o valor de maxlength será 12
+     <input type="text" name="telefone" onkeypress="mascara(this, '## ####-####')" maxlength="12">
+     neste código não é possivel inserir () ou [], apenas . (ponto), - (hifén) ou espaço
+     */
+
+        function mascara(t, mask){
+        var i = t.value.length;
+        var saida = mask.substring(1,0);
+        var texto = mask.substring(i)
+            if (texto.substring(0,1) != saida){
+                t.value += texto.substring(0,1);
+        }
+    }
+ </script>
 </head>
 <!--    <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">-->
     
@@ -182,27 +208,33 @@ $('#myPopover').popover();
 
             <div class="row">
                 <div class="col-sm-8">
-                <form action="submit_request.php" class="request">
+                <form action="../lib/submit_request.php" class="request" method="POST" autocomplete="on">
                     <legend> Preencha o formulário e aguarde o contato de um recrutador.</legend>
                         <fieldset>
                             <div class="form-group">
                                 <label for="email">Nome: </label>
-                                <input type="text" class="form-control name" id="name" required>
+                                <input type="text" class="form-control name" id="name" name="name" maxlength="70" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="age">Idade: </label>
-                                <input type="text" class="form-control age" id="age" required>
+                                <input type="text" class="form-control age" id="age" name="age" max="110" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="email">Email: </label>
-                                <input type="email" class="form-control email" id="email" required>
+                                <input type="email" class="form-control email" id="email" name="email" maxlength="50" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="whatsapp">Whatsapp: (com DDD) </label>
-                                <input type="number" class="form-control wpp" id="wpp" maxlength="12" required>
+                                <input type="text" onkeypress="mascara(this, '## #####-####')" class="form-control wpp" id="wpp" maxlength="13" name="wpp" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="av"> Fale um pouco sobre sua disponibilidade de horário: </label>
+                                
+                                <textarea class="form-control av" id="av" name="av" maxlength="255" required> </textarea>
                             </div>
 
                             <div class="form-group">
@@ -211,19 +243,19 @@ $('#myPopover').popover();
                                 <input type="radio" name="ets" id="ets" value="0"> Não
                             </div>
                             <div class="form-group">
-                                <label for="ets"> Você já usou Trucksbook? </label> <br>
-                                <input type="radio" name="ets" id="ets" value="0"> Não
-                                <input type="radio" name="ets" id="ets" value="1"> Sim <br>
-                                <input type="radio" name="ets" id="ets" value="2"> Já ouvi falar mas nunca usei
+                                <label for="tb"> Você já usou Trucksbook? </label> <br>
+                                <input type="radio" name="tb" id="tb" value="0"> Não
+                                <input type="radio" name="tb" id="tb" value="1"> Sim <br>
+                                <input type="radio" name="tb" id="tb" value="2"> Já ouvi falar mas nunca usei
                             </div>
                             <div class="form-group">
-                                <label for="ets"> Você já usou Discord </label> <br>
-                                <input type="radio" name="ets" id="ets" value="1"> Sim <br>
-                                <input type="radio" name="ets" id="ets" value="0"> Não
+                                <label for="ds"> Você já usou Discord </label> <br>
+                                <input type="radio" name="ds" id="ds" value="1"> Sim <br>
+                                <input type="radio" name="ds" id="ds" value="0"> Não
                             </div>
 
 
-                            <button type="submit" class="btn btn-success">Enviar</button>
+                            <button name="send" type="submit" class="btn btn-success">Enviar</button>
                     </fieldset>
                 </form>
                 
