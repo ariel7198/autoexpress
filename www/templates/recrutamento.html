@@ -182,47 +182,54 @@ $('#myPopover').popover();
 
             <div class="row">
                 <div class="col-sm-8">
-                <form action="submit_request.php">
-                    <div class="form-group">
-                        <label for="email">Nome: </label>
-                        <input type="text" class="form-control" id="name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="age">Idade: </label>
-                        <input type="text" class="form-control" id="age" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email: </label>
-                        <input type="email" class="form-control" id="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="whatsapp">Whatsapp: (com DDD) </label>
-                        <input type="number" class="form-control" id="wpp" maxlength="12" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="ets"> Você possui ETS original? </label> <br>
-                        <input type="radio" name="ets" id="ets" value="1"> Sim <br>
-                        <input type="radio" name="ets" id="ets" value="0"> Não
-                    </div>
-                    <div class="form-group">
-                        <label for="ets"> Você já usou Trucksbook? </label> <br>
-                        <input type="radio" name="ets" id="ets" value="0"> Não
-                        <input type="radio" name="ets" id="ets" value="1"> Sim <br>
-                        <input type="radio" name="ets" id="ets" value="2"> Já ouvi falar mas nunca usei
-                    </div>
-                    <div class="form-group">
-                        <label for="ets"> Você já usou Discord </label> <br>
-                        <input type="radio" name="ets" id="ets" value="1"> Sim <br>
-                        <input type="radio" name="ets" id="ets" value="0"> Não
-                    </div>
-                    
-                    
-                    <button type="submit" class="btn btn-success">Enviar</button>
+                <form action="submit_request.php" class="request">
+                    <legend> Preencha o formulário e aguarde o contato de um recrutador.</legend>
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="email">Nome: </label>
+                                <input type="text" class="form-control name" id="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="age">Idade: </label>
+                                <input type="text" class="form-control age" id="age" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email: </label>
+                                <input type="email" class="form-control email" id="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="whatsapp">Whatsapp: (com DDD) </label>
+                                <input type="number" class="form-control wpp" id="wpp" maxlength="12" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ets"> Você possui ETS original? </label> <br>
+                                <input type="radio" name="ets" id="ets" value="1"> Sim <br>
+                                <input type="radio" name="ets" id="ets" value="0"> Não
+                            </div>
+                            <div class="form-group">
+                                <label for="ets"> Você já usou Trucksbook? </label> <br>
+                                <input type="radio" name="ets" id="ets" value="0"> Não
+                                <input type="radio" name="ets" id="ets" value="1"> Sim <br>
+                                <input type="radio" name="ets" id="ets" value="2"> Já ouvi falar mas nunca usei
+                            </div>
+                            <div class="form-group">
+                                <label for="ets"> Você já usou Discord </label> <br>
+                                <input type="radio" name="ets" id="ets" value="1"> Sim <br>
+                                <input type="radio" name="ets" id="ets" value="0"> Não
+                            </div>
+
+
+                            <button type="submit" class="btn btn-success">Enviar</button>
+                    </fieldset>
                 </form>
+                
+                </div>
+                <div class="col-sm-4">
+                Você receberá um email com instruções de como proceder após o envio do formulário
                 
                 </div>
             </div>
