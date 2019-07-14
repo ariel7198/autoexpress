@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    require_once("../src/seguranca.php");
+    
+?>
 <!DOCTYPE html>
 <html>
 
@@ -122,29 +127,43 @@
                     <!--<li> <a href="https://autoexpresslogistica.tumblr.com/colaboradores"> COLABORADORES </a></li> -->
                     <li> <a href="#contato"> CONTATO </a></li>
                     <li> <a href="recrutamento.html"> RECRUTAMENTO </a></li>
-                    <li> <a href="colaborador.html"> COLABORADOR </a>
+                    <li> <?php 
+                            if (!isset($_SESSION['usuarioID'])) { 
+                                echo "<button type='button' class='btn btn-info'  data-toggle='modal'
+                                                        data-target='#modalLogin'>login</button>'}";
+                                
+                            } 
+                                else { 
+                                    echo "<a href='colaborador.php'> COLABORADOR </a> ";
+                                   }
+                        ?>                
                     <li>
 
                 </ul>
             </div>
-            <div class="modal fade" tabindex="-1" role="dialog" id="modalPromocao" onLoad="atualizaContador()">
+            <div class="modal fade " tabindex="-1" role="dialog" id="modalLogin">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header header-promocao">
-                            <h5 class="modal-title-center">PROMOÇÃO AUTOEXPRESS</h5>
+                            <h5 class="modal-title-center">LOGIN</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            <a class="e-widget no-button"
-                                href="https://gleam.io/7I40a/promoo-autoexpress-sorteio-euro-truck-simulator-2"
-                                rel="nofollow">Promoção - AutoExpress
-                                | Sorteio - "Euro Truck Simulator 2"</a>
-                            <script type="text/javascript" src="https://js.gleam.io/e.js" async="true"></script>
+                            <form action="../src/login.php" id="loginForm" method="POST" autocomplete="on">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">USUÁRIO</label>
+                                    <input type="text" class="form-control" id="user" name="user" aria-describedby="emailHelp" placeholder="usuário" required>
+                                    <small id="emailHelp" class="form-text text-muted">Fale com um gerente para obter seus dados de acesso</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">SENHA</label>
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="Senha" required>
+                                </div>
+                                    <button type="submit" class="btn btn-primary btn-block">ENTRAR</button>
+                            </form>
                         </div>
-
-
                     </div>
                 </div>
             </div>
@@ -164,8 +183,7 @@
     <div id="jumbo" class="jumbotron text-center" cla>
         <h1>Auto Express</h1>
         <p>Qualidade e rapidez</p>
-        <button type="button" class="btn btn-info" id="botao-promocao" data-toggle="modal"
-            data-target="#modalPromocao">PARTICIPE DO SORTEIO</button>
+        
 
     </div>
 

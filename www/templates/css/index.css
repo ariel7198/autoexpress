@@ -254,9 +254,12 @@ footer .glyphicon {
 }
 
 .header-promocao {
-    background: linear-gradient(150deg, #e26624 0%, #d60606 100%);
+/*    background: linear-gradient(150deg, #e26624 12%, #d60606 100%);*/
+    background-image: linear-gradient(rgba(13, 13, 13, .55), rgba(13, 13, 13, .55)), url(../images/login_background.png);
+    background-position: center;
     font: sans-serif;
     color: white;
+    text-shadow: 1px 1px black;
     font-size: 15px;
     text-align: center;
 }
@@ -379,4 +382,11 @@ footer .glyphicon {
     #tb-bt-hide {
         visibility: hidden;
     }
+}
+#modalLogin {
+    width: 
+}
+
+.login {
+    width: 50%;
 }
