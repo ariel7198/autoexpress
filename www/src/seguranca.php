@@ -2,6 +2,7 @@
 //  Configurações do Script
 // ==============================
 include ("conexao.php");
+session_start();
 $_SG['conectaServidor'] = true;    // Abre uma conexão com o servidor MySQL?
 $_SG['caseSensitive'] = false;     // Usar case-sensitive? Onde 'thiago' é diferente de 'THIAGO'
 $_SG['validaSempre'] = true;       // Deseja validar o usuário e a senha a cada carregamento de página?
@@ -23,7 +24,7 @@ $_SG['tabela'] = 'user';       // Nome da tabela onde os usuários são salvos
 * @return bool - Se o usuário foi validado ou não (true/false)
 */
 function userLogin($usuario, $senha) {
-    session_start();
+    
   global $_SG;
   $cS = ($_SG['caseSensitive']) ? 'BINARY' : '';
  
@@ -42,7 +43,6 @@ function userLogin($usuario, $senha) {
     
   } else {
     // Definimos dois valores na sessão com os dados do usuário
-    session_start();
     $_SESSION['usuarioID'] = $resultado['id']; // Pega o valor da coluna 'id do registro encontrado no MySQL
     $_SESSION['usuarioNome'] = $resultado['name'];
       echo "<br> nome na sessão:", $_SESSION['usuarioNome'];
@@ -57,8 +57,8 @@ function userLogin($usuario, $senha) {
      return true;
   }
 }
-function novoComboio($pretime, $time, $start_city, $end_city, $date, $save_link, $px_channel, $server_number, $instructions){
-    
+function registerConvoy($pretime, $time, $start_city, $end_city, $date, $save_link, $px_channel, $server_number, $instructions){
+
 }
 /**
 * Função que protege uma página
