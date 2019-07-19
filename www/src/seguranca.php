@@ -56,8 +56,24 @@ function userLogin($usuario, $senha) {
     }
      return true;
   }
-}
+}/**
+
+* Função que registra os comboios
+*/
 function registerConvoy($pretime, $time, $start_city, $end_city, $date, $save_link, $px_channel, $server_number, $instructions){
+  $SQL = "INSERT INTO convoy (pretime, time, start_city, end_city, date, save_link, px_channel, server_number, instructions, user_id, user_posts_id)
+  VALUES ('')";
+  echo "<br> Comando executado: ",$sql;
+
+  if ($_SG['link'] -> multi_query($SQL) === true {
+    echo "inserido dados. "
+  }
+if ($_SG['link']->multi_query($sql) === TRUE) { 
+  header("Location: sucess.php?id=1");
+} 
+
+
+
 
 }
 /**
