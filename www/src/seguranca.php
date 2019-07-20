@@ -31,8 +31,8 @@ function userLogin($usuario, $senha) {
   $nusuario = addslashes($usuario);
   $nsenha = addslashes($senha);
   
-  $sql = "SELECT * FROM `".$_SG['tabela']."` WHERE ".$cS." `login` = '".$nusuario."' AND ".$cS." `password` = '".$nsenha."'";
-  echo "Consulta efetuada: ", $sql;
+  $sql = "SELECT us.id, us.name, us.login, us.password, pt.name AS cargo, pt.id AS posts_id FROM `".$_SG['tabela']."` AS us INNER JOIN posts as pt WHERE us.".$cS." login = '".$nusuario."' AND us.".$cS." password = '".$nsenha."' AND us.posts_id = pt.id";
+  //echo "Consulta efetuada: ", $sql;
   $query = mysqli_query($_SG['link'], $sql);
   $resultado = mysqli_fetch_assoc($query);
   // Verifica se encontrou algum registro
@@ -47,6 +47,7 @@ function userLogin($usuario, $senha) {
     $_SESSION['usuarioNome'] = $resultado['name'];
       echo "<br> nome na sessão:", $_SESSION['usuarioNome'];
     $_SESSION['usuarioAcesso'] = $resultado['posts_id']; //Pega o nível de acesso do usário
+      $_SESSION['usuarioCargo'] = $resultado['cargo'];
     // Pega o valor da coluna 'nome' do registro encontrado no MySQL
     // Verifica a opção se sempre validar o login
     if ($_SG['validaSempre'] == true) {
@@ -60,22 +61,27 @@ function userLogin($usuario, $senha) {
 
 * Função que registra os comboios
 */
-function registerConvoy($pretime, $time, $start_city, $end_city, $date, $save_link, $px_channel, $server_number, $instructions){
-  $SQL = "INSERT INTO convoy (pretime, time, start_city, end_city, date, save_link, px_channel, server_number, instructions, user_id, user_posts_id)
-  VALUES ('')";
-  echo "<br> Comando executado: ",$sql;
+ function registerConvoy($pretime, $time, $start_city, $final_city, $date, $save_link, $px_channel, $server_number, $instructions){
+     include ("conexao.php");
+     $userid = $_SESSION['usuarioID'];
+     $userPost = $_SESSION['usuarioAcesso'];
 
-  if ($_SG['link'] -> multi_query($SQL) === true {
-    echo "inserido dados. "
-  }
-if ($_SG['link']->multi_query($sql) === TRUE) { 
-  header("Location: sucess.php?id=1");
-} 
+     $SQL = "INSERT INTO convoy (pretime, time, start_city, final_city, date, save_link, px_channel, server_number, instructions, user_id, user_posts_id)
+     VALUES ('$pretime','$time','$start_city','$final_city','$date','$save_link','$px_channel','$server_number','$instructions',$userid,$userPost)";
+     echo "<br> Comando executado: ", $SQL;
+
+     if ($_SG['link'] -> multi_query($SQL) === true) {
+         echo "inserido dados. ";
+     }
+     if ($_SG['link']->multi_query($SQL) === TRUE) { 
+         header("Location: ../templates/colaborador.php");
+     } 
+ }
 
 
 
 
-}
+
 /**
 * Função que protege uma página
 */
@@ -83,12 +89,14 @@ function protegePagina() {
   global $_SG;
   if (!isset($_SESSION['usuarioID']) OR !isset($_SESSION['usuarioNome'])) {
     // Não há usuário logado, manda pra página de login
-    expulsaVisitante();
+      echo "Nao ha usuario logado";
+      
+    expulsaVisitante(1);
   } else {
     // Há usuário logado, verifica se precisa validar o login novamente
     if ($_SG['validaSempre'] == true) {
       // Verifica se os dados salvos na sessão batem com os dados do banco de dados
-      if (!validaUsuario($_SESSION['usuarioLogin'], $_SESSION['usuarioSenha'])) {
+      if (!userLogin($_SESSION['usuarioLogin'], $_SESSION['usuarioSenha'])) {
         // Os dados não batem, manda pra tela de login
         expulsaVisitante();
       }
@@ -109,13 +117,14 @@ function restringeAcesso($required_post) { // Restringe o acesso para páginas o
 */
 function expulsaVisitante($motivo) {
   global $_SG;
+  echo "chamou a funcao de expulsar";
   // Remove as variáveis da sessão (caso elas existam)
   unset($_SESSION['usuarioID'], $_SESSION['usuarioNome'], $_SESSION['usuarioLogin'], $_SESSION['usuarioSenha']);
   // Manda pra tela de login
     
     /* 1 para usuario invalido e 2 para problemas de autorizacao */
   $error = $motivo;
-  header("Location: login.php?erro=$error");
+  header("Location: index.php");
 }
 
 ?>
