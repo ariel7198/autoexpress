@@ -1,7 +1,7 @@
 body {
-     min-width: 400px;
-     color: #134568;
- }
+    min-width: 400px;
+    color: #134568;
+}
 a {
     text-decoration: none;
     color: white;
@@ -12,181 +12,227 @@ a {
 #bem-vindo {
     padding-top: 100px;
 }
-    @media screen and (max-width: 550px){                                         
-        #informacoes{
-            padding: 15px; 
-        }
+@media screen and (max-width: 550px){                                         
+    #informacoes{
+        padding: 15px; 
     }
+}
 .navbar {
-                margin-bottom: 0;
+    margin-bottom: 0;
     /*            box-shadow: 2px 2px 2px #56595c;*/
     /*            background-color: #31A2F2;*/
-                background-color:  #134568;
-                z-index: 9999;
-                border: 0;
-                font-size: 12px !important;
-                line-height: 1.42857143 !important;
-                letter-spacing: 4px;
-                border-radius: 0;
-            }
-            
-            .navbar li a, .navbar .navbar-brand{
-                color: #fff !important;
-                -webkit-transition: 0.1s ease-in-out;
-                -moz-transition: 0.1s ease-in-out;
-                transition: background-color 0.1s , color 0.2s ease-in-out;
-            }
-            .navbar-nav li a:hover, .navbar-nav li.active a {
-                color: #134568 !important;
-                background-color: #fff !important;
-                transition-timing-function: ease-in;   
-            }
-            .navbar-default .navbar-toggle {
-                border-color: transparent;
-                color: #fff !important;
-            }
-            .logo-small {
-              color: #134568;
-              font-size: 40px;
-                
-            }
-            .logo {
-              color: #134568;
-              font-size: 200px;
-            }
-            @media screen and (max-width: 786px){
-                .col-sm-4{
-                    text-align: center;
-                    margin: 25px 0;
-                }
-            }
-            .aex-logo {
-                height: 105px;
-                margin-top: -36px;
-    /*            background-color: #31A2F2;*/
-                background-color: white;
-                -webkit-transition: 0.1s ease-in-out;
-                -moz-transition: 0.1s ease-in-out;
-                transition: height 0.1s, margin-left 0.1s, color 0.2s ease-in-out;
-                box-shadow: 2px 2px 2px #232323;
-                
-            }
-            .logo-diferente{
-                height: 100px;
-                transition-timing-function: ease-in;
-    /*            background-color: #31A2F2;*/
-                background-color: white;
-                box-shadow: 2px 2px 2px #232323;
-                
-            }
-            .bg-grey {
-                background-color: #f6f6f6;
-            }
-            .container-fluid {
-                padding: 60px 110px;    
-            }
-            .tumbnail {
-                padding: 0 0 15px 0;
-                border: none;
-                border-radius: 0;
-            }
-            .tumbnail img {
-                width: 100%; /*tamanho da imagem dentro da div mesmo */
-    /*            height: 100%;*/
-                margin-bottom: 10px;
-            }
-            .item h4 {
-                font-size: 19px;
-                line-height: 1.375em;
-                font-weight: 400;
-                font-style: italic;
-                margin: 70px 0;
-            }
-            .item span {
-                font-style: normal;
-            }
-            footer {
-                background-color: white;
-                color: #134568;
-                height: 150px;
-            }
-            footer .glyphicon {
-                font-size: 20px;
-                margin-bottom: 20px;
-                color: #134568;
-            }
-            .slideanim {visibility:hidden;}
-            .slide {
-                /* The name of the animation */
-                animation-name: slide;
-                -webkit-animation-name: slide; 
-                /* The duration of the animation */
-                animation-duration: 1s; 
-                -webkit-animation-duration: 1s;
-                /* Make the element visible */
-                visibility: visible; 
-            }
-            
-    /*      
-            /* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
-            @keyframes slide {
-                0% {
-                    opacity: 0;
-                    transform: translateY(70%);
-                } 
-                100% {
-                    opacity: 1;
-                    transform: translateY(0%);
-                } 
-            }
-            @-webkit-keyframes slide {
-                0% {
-                    opacity: 0;
-                    -webkit-transform: translateY(70%);
-                } 
-                100% {
-                    opacity: 1;
-                    -webkit-transform: translateY(0%);
-                }
-            }
-
-
-
-
-
-
-
-    .panel {
-        background-color: 
-        min-height: 170px;
-    }
-    }
-
-    .panel-heading {
-        padding: 0;
-        background-color: red;
-    }
-
-    .panel-body {
-        padding: 10px;
-    }
-
-
-    .modal-header {
-        background-color: white;
-        color: #134568;
+    background-color:  #134568;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+}
+.navbar li a, .navbar .navbar-brand{
+    color: #fff !important;
+    -webkit-transition: 0.1s ease-in-out;
+    -moz-transition: 0.1s ease-in-out;
+    transition: background-color 0.1s , color 0.2s ease-in-out;
+}
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #134568 !important;
+    background-color: #fff !important;
+    transition-timing-function: ease-in;   
+}
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+}
+.logo-small {
+    color: #134568;
+    font-size: 40px;
+}
+.logo {
+    color: #134568;
+    font-size: 200px;
+}
+@media screen and (max-width: 786px){
+    .col-sm-4{
         text-align: center;
-        font-family: arial;
-
+        margin: 25px 0;
     }
+}
+.aex-logo {
+    height: 105px;
+    margin-top: -36px;
+    /*            background-color: #31A2F2;*/
+    background-color: white;
+    -webkit-transition: 0.1s ease-in-out;
+    -moz-transition: 0.1s ease-in-out;
+    transition: height 0.1s, margin-left 0.1s, color 0.2s ease-in-out;
+    box-shadow: 2px 2px 2px #232323;
 
-    .modal-body {
-        font-family: sans-serif;
-        letter-spacing: 0.3px;
-        font-size: 1.4rem;
+}
+.logo-diferente{
+    height: 100px;
+    transition-timing-function: ease-in;
+    /*            background-color: #31A2F2;*/
+    background-color: white;
+    box-shadow: 2px 2px 2px #232323;
+
+}
+.bg-grey {
+    background-color: #f6f6f6;
+}
+.container-fluid {
+    padding: 60px 110px;    
+}
+.tumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+}
+.tumbnail img {
+    width: 100%; /*tamanho da imagem dentro da div mesmo */
+/*            height: 100%;*/
+    margin-bottom: 10px;
+}
+.item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+}
+.item span {
+    font-style: normal;
+}
+footer {
+    background-color: white;
+    color: #134568;
+    height: 150px;
+}
+.glyphicon {
+    font-size: 20px;
+    color: white;
+}
+.slideanim {visibility:hidden;}
+.slide {
+    /* The name of the animation */
+    animation-name: slide;
+    -webkit-animation-name: slide; 
+    /* The duration of the animation */
+    animation-duration: 1s; 
+    -webkit-animation-duration: 1s;
+    /* Make the element visible */
+    visibility: visible; 
+}
+
+/*      
+/* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    } 
+}
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
     }
+}
 
-    .modal {
-        
+.panel { 
+    min-height: 170px;
     }
+}
 
+.panel-heading {
+    padding: 0;
+    background-color: white;
+    color: #134568;
+    text-align: center;
+    font-family: arial;
+}
+
+.panel-body {
+    padding: 10px;
+}
+
+.modal-body {
+    font-family: sans-serif;
+    letter-spacing: 0.3px;
+    font-size: 1.4rem;
+}
+
+.modal {
+
+}
+
+
+.badge {
+  padding: 4px 9px 3px;
+  font-size: 12.025px;
+  font-weight: bold;
+  white-space: nowrap;
+  color: #ffffff;
+  background-color: #999999;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 5px;
+}
+.badge:hover {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.badge-danger {
+  background-color: #b94a48;
+}
+.badge-error:hover {
+  background-color: #953b39;
+}
+.badge-warning {
+  background-color: #f89406;
+}
+.badge-warning:hover {
+  background-color: #c67605;
+}
+.badge-success {
+  background-color: #468847;
+}
+.badge-success:hover {
+  background-color: #356635;
+}
+.badge-info {
+  background-color: #3a87ad;
+}
+.badge-info:hover {
+  background-color: #2d6987;
+}
+.badge-inverse {
+  background-color: #333333;
+}
+.badge-inverse:hover {
+  background-color: #1a1a1a;
+}
+
+.btn-logout {
+    margin-top: 5px;
+}
+
+
+.btn-adm {
+    width: 100%;
+    margin: 2px;
+/*    min-width: 15%;*/
+}
+
+.modal-title {
+    text-align: center;
+}

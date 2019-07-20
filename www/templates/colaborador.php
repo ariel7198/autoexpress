@@ -1,6 +1,7 @@
 <?php
     require_once ("../src/conexao.php");
     include ("../src/seguranca.php");
+    protegePagina();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -85,6 +86,13 @@ $('[data-toggle="popover"]').popover();
 // Select a specified element
 $('#myPopover').popover();
     </script>
+    <script>
+        function charCount(str) {
+            var lng = str.length;
+            document.getElementById("charcount").innerHTML = lng + "/600";
+        }
+    
+    </script>
 
 </head>
 <!--    <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">-->
@@ -100,14 +108,20 @@ $('#myPopover').popover();
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
                         <li> <a href="index.php"> INÍCIO </a></li>
+                        <li> 
+                            <button type="button" class="btn btn-link btn-logout">
+                                <span class="glyphicon glyphicon-log-out"></span> 
+                            </button> 
+                        </li>
+                        
                     
                     </ul>
                 </div>
             </div>
-            <div id="modalTrucksbook" class="modal fade" role="dialog">
-                <div class="modal-dialog">
+        <div id="modalTrucksbook" class="modal fade" role="dialog">
+            <div class="modal-dialog">
 
-                <!-- Modal content-->
+            <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -115,15 +129,15 @@ $('#myPopover').popover();
                         </div>
                         <div class="modal-body">
                             <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/JOOLns7o7e4" allowfullscreen></iframe>
-</div>
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/JOOLns7o7e4" allowfullscreen></iframe>
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-success" data-dismiss="modal">Concluído</button>
                         </div>
-                    </div>
-
                 </div>
+
+            </div>
             </div> <!-- fim modal trucksbook -->
             <div id="modalCargas" class="modal fade" role="dialog">
                 <div class="modal-dialog">
@@ -199,47 +213,56 @@ $('#myPopover').popover();
                         </div>
                         <div class="modal-body">
                             <p align="center"> Forneça as informações para o próximo comboio </p>
-                            <form>
+                            <form action="../src/registerConvoy.php" method="POST">
                                 <div class="form-row">
                                     <div class="form-group col-sm-12">
                                         <label for="inputDate"> Data: </label>
-                                        <input type="date" class="form-control" id="date" >
+                                        <input type="date" class="form-control" id="date" name="date" >
                                     </div>
                                 </div>
                               <div class="form-row">
                                 <div class="form-group col-sm-6">
                                   <label for="inputPretime">Horário de concentração</label>
-                                  <input type="time" class="form-control" id="pretime" placeholder="Email">
+                                  <input type="time" class="form-control" id="pretime" name="pretime">
                                 </div>
                                 <div class="form-group col-sm-6">
                                   <label for="inputTime">Horário de início</label>
-                                  <input type="time" class="form-control" id="time" placeholder="Password">
+                                  <input type="time" class="form-control" id="time" name="time">
                                 </div>
                               </div>
                                 <div class="form-row">
                                       <div class="form-group col-sm-6">
                                         <label for="inputStartCity">Origem:</label>
-                                        <input type="text" class="form-control" id="originCity" maxlength="40" placeholder="Ex: Calais">
+                                        <input type="text" class="form-control" id="originCity" maxlength="40" placeholder="Ex: Calais" name="originCity">
                                       </div>
                                         <div class="form-group col-sm-6">
                                         <label for="inputEndCity">Destino:</label>
-                                        <input type="text" class="form-control" id="destinationCity" maxlength="40" placeholder="Ex: Duisburg">
+                                        <input type="text" class="form-control" id="destinationCity" maxlength="40" placeholder="Ex: Duisburg" name="destinationCity">
                                       </div>
                                 </div>
                               <div class="form-row">
                                 <div class="form-group col-sm-6">
                                   <label for="inputSaveLink">Link do save:</label>
-                                  <input type="url" class="form-control" id="saveLink">
+                                  <input type="url" class="form-control" id="saveLink" name="saveLink">
                                 </div>
                                 <div class="form-group col-sm-4">
                                   <label for="inputState">Canal PX </label>
-                                  <input type="number" class="form-control" id="px" min="1" max="22">
+                                  <input type="number" class="form-control" id="px" min="1" max="22" name="px">
                                 </div>
                                 <div class="form-group col-sm-2">
                                   <label for="inputZip">Servidor</label>
-                                   <input type="number" class="form-control" id="server" min="1" max="3">
+                                   <input type="number" class="form-control" id="server" min="1" max="3" name="server">
                                   </div>
                               </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group col-sm-12">
+                                        <label for="inputInstructions"> Instruções para o comboio: </label>
+                                        <textarea type="textarea" class="form-control" id="convoyInstructions" maxlength="600" name="instructions" onkeypress="charCount(this.value)"> </textarea>
+                                        <span class='pull-right' id="charcount"></span>
+                                    </div>
+                                
+                                </div>
                               
                               <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
                             </form>
@@ -250,15 +273,101 @@ $('#myPopover').popover();
                     </div>
 
                 </div>
-            </div> <!-- fim modal trucksbook -->
+            </div> <!-- fim modal comboio -->
+            <div id="modalColaborador" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Cadastro de Colaborador </h4>
+                        </div>
+                        <div class="modal-body">
+                            <form action="../src/registerUser.php" method="POST">
+                                <div class="form-row">
+                                    <div class="form-group col-sm-6">
+                                        <label for="inputName"> Nome: </label>
+                                        <input type="text" class="form-control" id="name" name="name" required>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="inputPretime">Sobrenome</label>
+                                        <input type="text" class="form-control" id="surname" name="surname" required>
+                                    </div>
+                                </div>
+                              <div class="form-row">
+                                
+                                <div class="form-group col-sm-6">
+                                  <label for="inputTime">Horário de início</label>
+                                  <input type="time" class="form-control" id="time" name="time">
+                                </div>
+                              </div>
+                                <div class="form-row">
+                                      <div class="form-group col-sm-6">
+                                        <label for="inputStartCity">Origem:</label>
+                                        <input type="text" class="form-control" id="originCity" maxlength="40" placeholder="Ex: Calais" name="originCity">
+                                      </div>
+                                        <div class="form-group col-sm-6">
+                                        <label for="inputEndCity">Destino:</label>
+                                        <input type="text" class="form-control" id="destinationCity" maxlength="40" placeholder="Ex: Duisburg" name="destinationCity">
+                                      </div>
+                                </div>
+                              <div class="form-row">
+                                <div class="form-group col-sm-6">
+                                  <label for="inputSaveLink">Link do save:</label>
+                                  <input type="url" class="form-control" id="saveLink" name="saveLink">
+                                </div>
+                                <div class="form-group col-sm-4">
+                                  <label for="inputState">Canal PX </label>
+                                  <input type="number" class="form-control" id="px" min="1" max="22" name="px">
+                                </div>
+                                <div class="form-group col-sm-2">
+                                  <label for="inputZip">Servidor</label>
+                                   <input type="number" class="form-control" id="server" min="1" max="3" name="server">
+                                  </div>
+                              </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group col-sm-12">
+                                        <label for="inputInstructions"> Instruções para o comboio: </label>
+                                        <textarea type="textarea" class="form-control" id="convoyInstructions" maxlength="600" name="instructions" onkeypress="charCount(this.value)"> </textarea>
+                                        <span class='pull-right' id="charcount"></span>
+                                    </div>
+                                
+                                </div>
+                              
+                              <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div> <!-- fim modal comboio -->
+            
 
         </nav>
         
         <div id="bem-vindo" class="container-fluid">
             <div class="row">
                 <div class="col-sm-12">
-                <h4 class="text-center"> Seja bem vindo, <?php echo $_SESSION['usuarioNome']; ?></h4>
-                </div>
+                <h4 class="text-center"> Seja bem vindo, <?php echo $_SESSION['usuarioNome']; ?> 
+                    <?php
+                    switch($_SESSION['usuarioAcesso']){
+                        case 1:
+                            echo "<span class='badge badge-success'>",$_SESSION['usuarioCargo']," </span>  ";
+                        break;
+                        case 2:
+                            echo "<span class='badge badge-danger'>",$_SESSION['usuarioCargo']," </span>  ";
+                        break;
+                    } 
+                    
+                    
+                    ?>
+                  </h4> 
+                    
             </div>
             <div class="row">
                 <div class="col-sm-12">
@@ -303,6 +412,7 @@ $('#myPopover').popover();
                                 
                             ?>
                 <hr>
+                    <!-- informacoes do proximo comboio -->
                     <div class="row">
                         <div class="col-sm-12">
                         <div class="panel panel-default">
@@ -321,7 +431,7 @@ $('#myPopover').popover();
                                     <dt>Local:</dt>
                                     <dd><?php echo $resultado['start_city']; ?></dd>
                                     <dt>Destino: </dt>
-                                    <dd><?php echo $resultado['end_city']; ?></dd>
+                                    <dd><?php echo $resultado['final_city']; ?></dd>
                                     <dt>Servidor:</dt>
                                     <dd><?php echo $resultado['server_number']; ?></dd>
                                     <dt>Discord:</dt>
@@ -331,35 +441,20 @@ $('#myPopover').popover();
                                     
                                     
                                 </dl>
+                                
                             </div>
                             <div class="panel-footer">
                                 <dt>Informações adicionais:</dt>
                                     <dd> <?php echo $resultado['instructions']; ?> </dd>
+                                <h4> Rota do comboio: </h4>
+                                <img src="https://media.discordapp.net/attachments/583884470986473472/596851905049919488/ets2_20190705_160605_00.png?width=832&height=468" class="img-responsive"> 
                             </div>
 
                         </div>
 
                         </div>
                     </div>
-                    <div class="row">
-                    <div class="col-sm-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="text-center"> Não definido </h4>
-                            </div>
-                            <div class="panel-body">
-                                <dl class="dl-horizontal">
-                                    <h2> A determinar</h2>
-                                </dl>
-                            </div>
-                            <div class="panel-footer">
-                                AutoExpress - Qualidade e Rapidez
-                            </div>
-
-                        </div>
-
-                        </div>
-                    </div>
+                    
                     
                     
                 </div>
@@ -368,19 +463,30 @@ $('#myPopover').popover();
                   
                   <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h4 class="text-center"> Administração de comboios </h4>
+                            <h4 class="text-center"> Administração </h4>
                         </div>
                         <div class="panel-body">
-                            <div class="col-sm-12 offset-4"><button type="button" class="btn btn-primary " data-toggle="modal" data-target="#modalComboios">Gravar próximo Comboio</button> </div>
+                            <div class="row">
+                                <div class="col-sm-12 ">
+                                    <button type="button" class="btn btn-primary btn-adm" data-toggle="modal" data-target="#modalComboios"> Gravar próximo Comboio </button> 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <button type="button" class="btn btn-primary btn-adm " data-toggle="modal" data-target="#modalColaborador"> Novo colaborador </button> 
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="panel-footer">
-                            Volvo FH
+                            
                         </div>
                     
                     </div>
                 </div>
            </div>
             </div>
+        </div>
         
         <hr>
         <footer id="rodape" class="container-fluid text-center">
