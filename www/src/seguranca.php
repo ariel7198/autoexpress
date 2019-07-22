@@ -72,10 +72,25 @@ function userLogin($usuario, $senha) {
 
      if ($_SG['link'] -> multi_query($SQL) === true) {
          echo "inserido dados. ";
+         return true;
+     } else {
+         echo "erro na query";
      }
-     if ($_SG['link']->multi_query($SQL) === TRUE) { 
-         header("Location: ../templates/colaborador.php");
-     } 
+ }
+function registerUser($name, $surname, $password, $userName, $post){
+     include ("conexao.php");
+     
+     $SQL = "INSERT INTO user (name, surname, login, first_access, password, posts_id)
+     VALUES ('$name','$surname','$userName','1','$password','$post')";
+     echo "<br> Comando executado: ", $SQL;
+
+     if ($_SG['link'] -> multi_query($SQL) === true) {
+         echo "inserido dados. ";
+//         return true;
+     } else {
+         echo "erro na query";
+//         return false;
+     }
  }
 
 

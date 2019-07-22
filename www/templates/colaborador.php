@@ -93,6 +93,15 @@ $('#myPopover').popover();
         }
     
     </script>
+    <script>
+        function userCreator(){
+            var name = document.getElementById("name");
+            var surname = document.getElementById("surname");
+            var input = document.getElementById("userName");
+            input.value = name.value + "."+ surname.value;
+        }
+        
+    </script>
 
 </head>
 <!--    <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">-->
@@ -110,7 +119,7 @@ $('#myPopover').popover();
                         <li> <a href="index.php"> INÍCIO </a></li>
                         <li> 
                             <button type="button" class="btn btn-link btn-logout">
-                                <span class="glyphicon glyphicon-log-out"></span> 
+                                <a href="../src/logout.php"><span class="glyphicon glyphicon-log-out"></span> </a>
                             </button> 
                         </li>
                         
@@ -288,54 +297,43 @@ $('#myPopover').popover();
                                 <div class="form-row">
                                     <div class="form-group col-sm-6">
                                         <label for="inputName"> Nome: </label>
-                                        <input type="text" class="form-control" id="name" name="name" required>
+                                        <input type="text" class="form-control" id="name" oninput="userCreator()" name="name" required>
                                     </div>
                                     <div class="form-group col-sm-6">
-                                        <label for="inputPretime">Sobrenome</label>
-                                        <input type="text" class="form-control" id="surname" name="surname" required>
+                                        <label for="inputSurname">Sobrenome</label>
+                                        <input type="text" class="form-control" id="surname" onkeypress="userCreator()" name="surname" id="surname" required>
                                     </div>
                                 </div>
                               <div class="form-row">
-                                
-                                <div class="form-group col-sm-6">
-                                  <label for="inputTime">Horário de início</label>
-                                  <input type="time" class="form-control" id="time" name="time">
-                                </div>
-                              </div>
-                                <div class="form-row">
-                                      <div class="form-group col-sm-6">
-                                        <label for="inputStartCity">Origem:</label>
-                                        <input type="text" class="form-control" id="originCity" maxlength="40" placeholder="Ex: Calais" name="originCity">
-                                      </div>
-                                        <div class="form-group col-sm-6">
-                                        <label for="inputEndCity">Destino:</label>
-                                        <input type="text" class="form-control" id="destinationCity" maxlength="40" placeholder="Ex: Duisburg" name="destinationCity">
-                                      </div>
-                                </div>
-                              <div class="form-row">
-                                <div class="form-group col-sm-6">
-                                  <label for="inputSaveLink">Link do save:</label>
-                                  <input type="url" class="form-control" id="saveLink" name="saveLink">
-                                </div>
-                                <div class="form-group col-sm-4">
-                                  <label for="inputState">Canal PX </label>
-                                  <input type="number" class="form-control" id="px" min="1" max="22" name="px">
-                                </div>
-                                <div class="form-group col-sm-2">
-                                  <label for="inputZip">Servidor</label>
-                                   <input type="number" class="form-control" id="server" min="1" max="3" name="server">
+                                  <div class="form-group col-sm-6">
+                                        <label for="inputPassword">Senha para primeiro acesso: </label>
+                                        <input type="text" class="form-control" oninput="userCreator()" id="password" name="password">
                                   </div>
+                                  <div class="form-group col-sm-6">
+                                        <label for="inputUsername"> Usuário: </label>
+                                        <input type="text" class="form-control" id="userName" name="userName" readonly required>
+                                    </div>
                               </div>
-                                
                                 <div class="form-row">
                                     <div class="form-group col-sm-12">
-                                        <label for="inputInstructions"> Instruções para o comboio: </label>
-                                        <textarea type="textarea" class="form-control" id="convoyInstructions" maxlength="600" name="instructions" onkeypress="charCount(this.value)"> </textarea>
-                                        <span class='pull-right' id="charcount"></span>
+                                        <label for="inputPassword">Cargo </label>
+                                        <select class="form-control" name="post" id="post">
+                                            <?php 
+                                                global $_SG;
+                                                $sql = "SELECT * FROM posts";
+                                                $query = mysqli_query($_SG['link'],$sql);
+                                                while ($resultado = $query->fetch_assoc()){
+                                                    
+                                            ?>
+                                            <option value="<?php echo $resultado['id']; ?>"> <?php echo $resultado['name']; ?> </option>
+                                                
+                                            <?php 
+                                                }
+                                            ?>
+                                            
+                                        </select>
                                     </div>
-                                
                                 </div>
-                              
                               <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
                             </form>
                         </div>
@@ -353,7 +351,7 @@ $('#myPopover').popover();
         <div id="bem-vindo" class="container-fluid">
             <div class="row">
                 <div class="col-sm-12">
-                <h4 class="text-center"> Seja bem vindo, <?php echo $_SESSION['usuarioNome']; ?> 
+                <h4 class="text-center"> Seja bem vindo, <?php echo ucfirst($_SESSION['usuarioNome']); ?> 
                     <?php
                     switch($_SESSION['usuarioAcesso']){
                         case 1:
@@ -361,6 +359,12 @@ $('#myPopover').popover();
                         break;
                         case 2:
                             echo "<span class='badge badge-danger'>",$_SESSION['usuarioCargo']," </span>  ";
+                        break;
+                        case 3:
+                            echo "<span class='badge badge-warning'>",$_SESSION['usuarioCargo']," </span>  ";
+                        break;
+                        case 4:
+                            echo "<span class='badge badge-info'>",$_SESSION['usuarioCargo']," </span>  ";
                         break;
                     } 
                     
@@ -404,11 +408,9 @@ $('#myPopover').popover();
                     <?php
                                 
                                 global $_SG;
-                                $sql = "SELECT * FROM convoy AS cv INNER JOIN user AS us WHERE cv.user_id = us.id";
+                                $sql = "SELECT * FROM convoy ORDER BY date DESC LIMIT 1";
                                 $query = mysqli_query($_SG['link'],$sql);
                                 $resultado = mysqli_fetch_assoc($query);
-                    
-                                echo $resultado['instructions'];
                                 
                             ?>
                 <hr>
@@ -417,7 +419,11 @@ $('#myPopover').popover();
                         <div class="col-sm-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h4 class="text-center"> <?php echo $resultado['date']?> </h4>
+                                <h4 class="text-center"> 
+                                    <?php 
+                                    echo date("d/m/Y", strtotime($resultado['date']));
+                                    ?> 
+                                </h4>
                             </div>
                             
                             <div class="panel-body">
