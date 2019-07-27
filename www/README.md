@@ -1,3 +1,3 @@
-autoexpresslogistica.tumblr.com
+autoexpresslogistica.com
 
 ariel.7198@hotmail.com/
