@@ -84,8 +84,16 @@ a {
 .bg-grey {
     background-color: #f6f6f6;
 }
-.container-fluid {
-    padding: 60px 110px;    
+@media screen and (min-width: 937px){  
+    .container-fluid {
+        padding: 60px 110px;    
+    }
+    
+}
+@media screen and (max-width: 937px ){
+    .container-fluid {
+        padding: 30px 30px;
+    }
 }
 .tumbnail {
     padding: 0 0 15px 0;
@@ -262,4 +270,7 @@ footer {
 .save-link{
     overflow:hidden; 
     text-overflow: ellipsis;
+}
+.btn-tutoriais {
+    margin-top: 5px;
 }

@@ -129,7 +129,7 @@
             <div class="container">
                 <div class="navbar-header">
                 
-                    <a class="navbar-brand" href="https://autoexpresslogistica.tumblr.com/"> <img src="https://static.tumblr.com/jjqbi6t/YWnpe5fxy/logo.png" class="aex-logo img-circle"> </a>
+                    <a class="navbar-brand" href="index.php"> <img src="https://static.tumblr.com/jjqbi6t/YWnpe5fxy/logo.png" class="aex-logo img-circle"> </a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
@@ -429,20 +429,20 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-lg-3 col-sm-12 btn-tutoriais">
                 <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#modalTrucksbook">Trucksbook</button>
                         <!-- Modal -->
                             
                 </div>
-                <div class="col-sm-3">
+                <div class="col-lg-3 col-sm-12 btn-tutoriais">
                 <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#modalCargas">Criador de cargas</button>
                             
                 </div>
-                <div class="col-sm-3">
+                <div class="col-lg-3 col-sm-12 btn-tutoriais">
                 <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#modalPintura">Pintura do caminhão</button>
                 </div>
                 
-                <div class="col-sm-3">
+                <div class="col-lg-3 col-sm-12 btn-tutoriais">
                 <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#modalTruckersMP">Nome no TruckersMP</button>
                 </div>
                 
@@ -453,7 +453,7 @@
         
        <div id="informacoes" class="container-fluid text-center informacoes">
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-lg-8 col-sm-12">
                     <h3 class="text-center"> Pŕoximos comboios </h3>
                     <?php
                                 
@@ -516,7 +516,7 @@
                     
                 </div>
                 
-                <div class="col-sm-4">
+                <div class="col-lg-4 col-sm-12">
                   
                   <div class="panel panel-default">
                         <div class="panel-heading">
@@ -525,12 +525,12 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-sm-12 ">
-                                    <button type="button" class="btn btn-primary btn-adm" data-toggle="modal" data-target="#modalComboios"> Gravar próximo Comboio </button> 
+                                    <button type="button" class="btn btn-primary btn-adm" data-toggle="modal" data-target="#modalComboios"> Cadastrar Comboio </button> 
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <button type="button" class="btn btn-primary btn-adm " data-toggle="modal" data-target="#modalColaborador"> Novo colaborador </button> 
+                                    <button type="button" class="btn btn-primary btn-adm " data-toggle="modal" data-target="#modalColaborador"> Cadastrar colaborador </button> 
                                 </div>
                             </div>
                             

@@ -407,40 +407,40 @@
     <hr>
     <footer id="rodape" class="container-fluid text-center">
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-md-4 col-12">
                 <img class="img-circle" src="https://static.tumblr.com/jjqbi6t/YWnpe5fxy/logo.png" height="150px">
             </div>
-            <div class="col-sm-4">
+            <div class="col-md-4 col-12">
 
                 Auto Express Logistica™ <br> 2018 <br>
                 trucksbook.eu/company/13803
             </div>
 
-            <div class="col-sm-4">
+            <div class="col-md-4 col-12">
                 <div class="row">
                     <h4> Contato </h4>
                 </div>
                 <div class="row">
 
-                    <div class="col-sm-3">
+                    <div class="col-md-3 col-sm-12 social-footer">
                         <a href="https://www.facebook.com/autoexpresstransporte/" target="_blank"> <img
                                 src="https://static.tumblr.com/jjqbi6t/kb5pdmleg/facebook.png" class="social-facebook"
                                 height="36px"> </a>
 
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-md-3 col-sm-12 social-footer">
                         <a href="https://trucksbook.eu/company/13803" target="_blank"> <img
                                 src="https://static.tumblr.com/jjqbi6t/OpNpdlwj7/trucksbook-icon.png"
                                 class="social-trucksbook" height="36px"> </a>
 
 
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-md-3 col-sm-12 social-footer">
                         <a href="https://www.youtube.com/channel/UCqQ-tw6MbfDd0LAKlBiCDjw" target="_blank"> <img
                                 src="https://imagepng.org/wp-content/uploads/2017/09/youtube-play-icone.png"
                                 height="36px"> </a>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-md-3 col-sm-12 social-footer">
                         <a href="https://www.youtube.com/channel/UCqQ-tw6MbfDd0LAKlBiCDjw" target="_blank"> <img
                                 src="https://discordapp.com/assets/f8389ca1a741a115313bede9ac02e2c0.svg" height="45px">
                         </a>

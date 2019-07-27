@@ -127,8 +127,16 @@ a {
     background-color: #f6f6f6;
 }
 
-.container-fluid {
-    padding: 60px 110px;
+@media screen and (min-width: 937px){  
+    .container-fluid {
+        padding: 60px 110px;    
+    }
+    
+}
+@media screen and (max-width: 937px ){
+    .container-fluid {
+        padding: 30px 30px;
+    }
 }
 
 .tumbnail {
@@ -412,4 +420,10 @@ footer .glyphicon {
     font-family: sans-serif;
     font-size: 18dp;
     padding-top: 3px;
+}
+
+
+
+.social-footer {
+    margin-top: 5px;
 }
