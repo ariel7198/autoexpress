@@ -1,7 +1,7 @@
 <?php
     require_once ("../src/conexao.php");
     include ("../src/seguranca.php");
-    protegePagina();
+    //protegePagina();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -401,7 +401,7 @@ $('#myPopover').popover();
         
         
         
-       <div id="informacoes" class="container-fluid text-center">
+       <div id="informacoes" class="container-fluid text-center informacoes">
             <div class="row">
                 <div class="col-sm-8">
                     <h3 class="text-center"> Pŕoximos comboios </h3>

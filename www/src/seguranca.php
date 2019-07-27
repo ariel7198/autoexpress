@@ -3,6 +3,7 @@
 // ==============================
 include ("conexao.php");
 session_start();
+
 $_SG['conectaServidor'] = true;    // Abre uma conexão com o servidor MySQL?
 $_SG['caseSensitive'] = false;     // Usar case-sensitive? Onde 'thiago' é diferente de 'THIAGO'
 $_SG['validaSempre'] = true;       // Deseja validar o usuário e a senha a cada carregamento de página?
@@ -139,7 +140,7 @@ function expulsaVisitante($motivo) {
     
     /* 1 para usuario invalido e 2 para problemas de autorizacao */
   $error = $motivo;
-  header("Location: index.php");
+  header("Location: index.php?errorn=");
 }
 
 ?>

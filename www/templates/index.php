@@ -1,5 +1,8 @@
 <?php
-    session_start();
+    if (isset($_SESSION)){ 
+        session_start();
+    }
+
     require_once("../src/seguranca.php");
     
 ?>
@@ -76,6 +79,7 @@
 
 
     </script>
+    
 
     <!--
     <script>
@@ -129,8 +133,8 @@
                     <li> <a href="recrutamento.html"> RECRUTAMENTO </a></li>
                     <li> <?php 
                             if (!isset($_SESSION['usuarioID'])) { 
-                                echo "<button type='button' class='btn btn-info'  data-toggle='modal'
-                                                        data-target='#modalLogin'>login</button>'}";
+                                echo "<button type='button' class='btn btn-info btn-login'  data-toggle='modal'
+                                                        data-target='#modalLogin'>LOGIN</button>'}";
                                 
                             } 
                                 else { 
@@ -154,8 +158,8 @@
                             <form action="../src/login.php" id="loginForm" method="POST" autocomplete="on">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">USUÁRIO</label>
-                                    <input type="text" class="form-control" id="user" name="user" aria-describedby="emailHelp" placeholder="usuário" required>
-                                    <small id="emailHelp" class="form-text text-muted">Fale com um gerente para obter seus dados de acesso</small>
+                                    <input type="text" class="form-control" id="user" name="user" aria-describedby="emailHelp" placeholder="Usuário" required>
+                                    
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">SENHA</label>
@@ -163,6 +167,11 @@
                                 </div>
                                     <button type="submit" class="btn btn-primary btn-block">ENTRAR</button>
                             </form>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="text-center">
+                                <p> Caso não saiba seus dados, fale com um administrador </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -179,6 +188,32 @@
         }
 
     </script>
+        
+    
+         <?php 
+                            if (isset($_GET['errorn']) && (isset($_SESSION))) {
+                                {
+                                    $erro = $_GET['errorn'];
+                                    //echo $erro;
+                                    if ($erro == 1){ 
+                                        echo "
+                                        <div class='row'>
+                                            <div class='col-sm-12 login-error'>
+                                            <center> <p id='login-error-text'> Usuario ou senha incorreto </center>
+                                        </div>
+                                        </div> ";
+                                    }
+                                    else if ($erro ==299){ 
+                                        echo "
+                                        <div class='row'>
+                                            <div class='col-sm-12 login-error'>
+                                            <center> <p id='login-error-text'> Você não tem autorização para acessar essa página.
+                                            <br> Contate um administrador </center>
+                                        </div>
+                                        </div> ";
+                                    } 
+                                } 
+                            }  ?>
 
     <div id="jumbo" class="jumbotron text-center" cla>
         <h1>Auto Express</h1>

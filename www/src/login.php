@@ -14,7 +14,7 @@
             echo "deu certo";
             echo "sessao vale: ", $_SESSION['usuarioNome'];
         } else {
-            echo "nao deu certo";
+            // header("Location: ../templates/index.php?errorn=1");
         }
     }
 ?>
