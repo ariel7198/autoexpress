@@ -3,7 +3,7 @@
         session_start();
     }
 
-    require_once("../src/seguranca.php");
+    require_once("seguranca.php");
     
 ?>
 <!DOCTYPE html>
@@ -122,7 +122,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"> <img src="https://static.tumblr.com/jjqbi6t/YWnpe5fxy/logo.png"
+                <a class="navbar-brand" href="index.php"> <img src="https://static.tumblr.com/jjqbi6t/YWnpe5fxy/logo.png"
                         class="aex-logo img-circle"> </a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
@@ -155,7 +155,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="../src/login.php" id="loginForm" method="POST" autocomplete="on">
+                            <form action="login.php" id="loginForm" method="POST" autocomplete="on">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">USUÁRIO</label>
                                     <input type="text" class="form-control" id="user" name="user" aria-describedby="emailHelp" placeholder="Usuário" required>
@@ -199,7 +199,7 @@
                                         echo "
                                         <div class='row'>
                                             <div class='col-sm-12 login-error'>
-                                            <center> <p id='login-error-text'> Usuario ou senha incorreto </center>
+                                            <center> <p id='login-error-text'> Usuario ou senha incorretos </center>
                                         </div>
                                         </div> ";
                                     }
@@ -212,6 +212,14 @@
                                         </div>
                                         </div> ";
                                     } 
+                                    else if ($erro ==500){ 
+                                        echo "
+                                        <div class='row'>
+                                            <div class='col-sm-12 login-error'>
+                                            <center> <p id='login-error-text'> Por favor, faça login novamente. </center>
+                                        </div>
+                                        </div> ";
+                                    }
                                 } 
                             }  ?>
 

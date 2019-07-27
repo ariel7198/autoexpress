@@ -48,14 +48,14 @@ function userLogin($usuario, $senha) {
     $_SESSION['usuarioNome'] = $resultado['name'];
       echo "<br> nome na sessão:", $_SESSION['usuarioNome'];
     $_SESSION['usuarioAcesso'] = $resultado['posts_id']; //Pega o nível de acesso do usário
-      $_SESSION['usuarioCargo'] = $resultado['cargo'];
+    $_SESSION['usuarioCargo'] = $resultado['cargo'];
     // Pega o valor da coluna 'nome' do registro encontrado no MySQL
     // Verifica a opção se sempre validar o login
-    if ($_SG['validaSempre'] == true) {
-      // Definimos dois valores na sessão com os dados do login
-      $_SESSION['usuarioLogin'] = $usuario;
-      $_SESSION['usuarioSenha'] = $senha;
-    }
+        if ($_SG['validaSempre'] == true) {
+            // Definimos dois valores na sessão com os dados do login
+            $_SESSION['usuarioLogin'] = $usuario;
+            $_SESSION['usuarioSenha'] = $senha;
+        }
      return true;
   }
 }/**
@@ -140,7 +140,7 @@ function expulsaVisitante($motivo) {
     
     /* 1 para usuario invalido e 2 para problemas de autorizacao */
   $error = $motivo;
-  header("Location: index.php?errorn=");
+  header("Location: index.php?errorn=500");
 }
 
 ?>

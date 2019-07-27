@@ -1,7 +1,7 @@
 <?php
-    require_once ("../src/conexao.php");
-    include ("../src/seguranca.php");
-    //protegePagina();
+    require_once ("conexao.php");
+    include ("seguranca.php");
+    protegePagina();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -119,7 +119,7 @@ $('#myPopover').popover();
                         <li> <a href="index.php"> INÍCIO </a></li>
                         <li> 
                             <button type="button" class="btn btn-link btn-logout">
-                                <a href="../src/logout.php"><span class="glyphicon glyphicon-log-out"></span> </a>
+                                <a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> </a>
                             </button> 
                         </li>
                         
@@ -222,7 +222,7 @@ $('#myPopover').popover();
                         </div>
                         <div class="modal-body">
                             <p align="center"> Forneça as informações para o próximo comboio </p>
-                            <form action="../src/registerConvoy.php" method="POST">
+                            <form action="registerConvoy.php" method="POST">
                                 <div class="form-row">
                                     <div class="form-group col-sm-12">
                                         <label for="inputDate"> Data: </label>
@@ -293,7 +293,7 @@ $('#myPopover').popover();
                                 <h4 class="modal-title">Cadastro de Colaborador </h4>
                         </div>
                         <div class="modal-body">
-                            <form action="../src/registerUser.php" method="POST">
+                            <form action="registerUser.php" method="POST">
                                 <div class="form-row">
                                     <div class="form-group col-sm-6">
                                         <label for="inputName"> Nome: </label>

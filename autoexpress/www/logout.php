@@ -3,6 +3,6 @@
     unset($_SESSION['usuarioID'], $_SESSION['usuarioNome'], $_SESSION['usuarioAcesso'], $_SESSION['usuarioSenha'], $_SESSION['usuarioSenha']);
     session_destroy();
 
-    header ("Location: ../templates/index.php");
+    header("Location: index.php");
 
 ?>

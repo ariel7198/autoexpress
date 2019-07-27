@@ -17,7 +17,7 @@
 
 
         if (registerUser($name, $surname, $password, $userName, $post) == true){
-            //header ("Location: ../templates/colaborador.php");
+            //header ("Location: ../colaborador");
             echo "deu certo";
             echo "sessao vale: ", $_SESSION['usuarioNome'];
         } else {

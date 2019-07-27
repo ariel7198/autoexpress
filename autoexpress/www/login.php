@@ -10,11 +10,11 @@
         echo "<br> senha recebida: ", $password;
 
         if (userLogin($user, $password) == true){
-            header ("Location: ../templates/colaborador.php");
+            header("Location: colaborador.php");
             echo "deu certo";
             echo "sessao vale: ", $_SESSION['usuarioNome'];
         } else {
-            // header("Location: ../templates/index.php?errorn=1");
+            header("Location: index.php?errorn=1");
         }
     }
 ?>
