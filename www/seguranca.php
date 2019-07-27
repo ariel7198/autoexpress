@@ -87,10 +87,10 @@ function registerUser($name, $surname, $password, $userName, $post){
 
      if ($_SG['link'] -> multi_query($SQL) === true) {
          echo "inserido dados. ";
-//         return true;
+         return true;
      } else {
          echo "erro na query";
-//         return false;
+         return false;
      }
  }
 

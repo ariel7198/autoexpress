@@ -23,9 +23,9 @@
         echo "<br> instructions: ", $instructions;
 
         if (registerConvoy($pretime, $time, $originCity, $destinationCity, $date, $saveLink, $px, $server, $instructions) == true){
-            header ("Location: ../colaborador");
-//            echo "deu certo";
-//            echo "sessao vale: ", $_SESSION['usuarioNome'];
+            header ("Location: colaborador.php");
+            echo "deu certo";
+            echo "sessao vale: ", $_SESSION['usuarioNome'];
         } else {
             echo "nao deu certo";
         }

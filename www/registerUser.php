@@ -17,11 +17,12 @@
 
 
         if (registerUser($name, $surname, $password, $userName, $post) == true){
-            //header ("Location: ../colaborador");
+            header ("Location: colaborador.php?alert=1");
             echo "deu certo";
             echo "sessao vale: ", $_SESSION['usuarioNome'];
         } else {
             echo "nao deu certo";
+            header ("Location: colaborador.php?alert=1062");
         }
     }
 

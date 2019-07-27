@@ -78,15 +78,18 @@
     }
 
     animatePlane();
-    }); </script>
+    }); 
+    </script>
+    
     <script>
     // Select all elements with data-toggle="popover" in the document
-$('[data-toggle="popover"]').popover(); 
+        $('[data-toggle="popover"]').popover(); 
 
-// Select a specified element
-$('#myPopover').popover();
+        // Select a specified element
+        $('#myPopover').popover();
     </script>
     <script>
+        
         function charCount(str) {
             var lng = str.length;
             document.getElementById("charcount").innerHTML = lng + "/600";
@@ -101,6 +104,20 @@ $('#myPopover').popover();
             input.value = name.value + "."+ surname.value;
         }
         
+    </script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function(){ 
+            setTimeout(function() {
+                $(".message-box-success").fadeOut().empty();
+            }, 3000);
+        }, false);
+    </script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function(){ 
+            setTimeout(function() {
+                $(".message-box-error").fadeOut().empty();
+            }, 10000);
+        }, false);
     </script>
 
 </head>
@@ -226,41 +243,41 @@ $('#myPopover').popover();
                                 <div class="form-row">
                                     <div class="form-group col-sm-12">
                                         <label for="inputDate"> Data: </label>
-                                        <input type="date" class="form-control" id="date" name="date" >
+                                        <input type="date" class="form-control" id="date" name="date" required>
                                     </div>
                                 </div>
                               <div class="form-row">
                                 <div class="form-group col-sm-6">
                                   <label for="inputPretime">Horário de concentração</label>
-                                  <input type="time" class="form-control" id="pretime" name="pretime">
+                                  <input type="time" class="form-control" id="pretime" name="pretime" required>
                                 </div>
                                 <div class="form-group col-sm-6">
                                   <label for="inputTime">Horário de início</label>
-                                  <input type="time" class="form-control" id="time" name="time">
+                                  <input type="time" class="form-control" id="time" name="time" required>
                                 </div>
                               </div>
                                 <div class="form-row">
                                       <div class="form-group col-sm-6">
                                         <label for="inputStartCity">Origem:</label>
-                                        <input type="text" class="form-control" id="originCity" maxlength="40" placeholder="Ex: Calais" name="originCity">
+                                        <input type="text" class="form-control" id="originCity" maxlength="40" placeholder="Ex: Calais" name="originCity" required>
                                       </div>
                                         <div class="form-group col-sm-6">
                                         <label for="inputEndCity">Destino:</label>
-                                        <input type="text" class="form-control" id="destinationCity" maxlength="40" placeholder="Ex: Duisburg" name="destinationCity">
+                                        <input type="text" class="form-control" id="destinationCity" maxlength="40" placeholder="Ex: Duisburg" name="destinationCity" required>
                                       </div>
                                 </div>
                               <div class="form-row">
                                 <div class="form-group col-sm-6">
                                   <label for="inputSaveLink">Link do save:</label>
-                                  <input type="url" class="form-control" id="saveLink" name="saveLink">
+                                  <input type="url" class="form-control" id="saveLink" name="saveLink" required>
                                 </div>
                                 <div class="form-group col-sm-4">
                                   <label for="inputState">Canal PX </label>
-                                  <input type="number" class="form-control" id="px" min="1" max="22" name="px">
+                                  <input type="number" class="form-control" id="px" min="1" max="22" name="px" required>
                                 </div>
                                 <div class="form-group col-sm-2">
                                   <label for="inputZip">Servidor</label>
-                                   <input type="number" class="form-control" id="server" min="1" max="3" name="server">
+                                   <input type="number" class="form-control" id="server" min="1" max="3" name="server" required>
                                   </div>
                               </div>
                                 
@@ -307,7 +324,7 @@ $('#myPopover').popover();
                               <div class="form-row">
                                   <div class="form-group col-sm-6">
                                         <label for="inputPassword">Senha para primeiro acesso: </label>
-                                        <input type="text" class="form-control" oninput="userCreator()" id="password" name="password">
+                                        <input type="text" class="form-control" oninput="userCreator()" id="password" name="password" required>
                                   </div>
                                   <div class="form-group col-sm-6">
                                         <label for="inputUsername"> Usuário: </label>
@@ -317,7 +334,7 @@ $('#myPopover').popover();
                                 <div class="form-row">
                                     <div class="form-group col-sm-12">
                                         <label for="inputPassword">Cargo </label>
-                                        <select class="form-control" name="post" id="post">
+                                        <select class="form-control" name="post" id="post" required>
                                             <?php 
                                                 global $_SG;
                                                 $sql = "SELECT * FROM posts";
@@ -344,9 +361,42 @@ $('#myPopover').popover();
 
                 </div>
             </div> <!-- fim modal comboio -->
+        
             
 
         </nav>
+        <?php 
+                            if (isset($_GET['alert'])) {
+                                {
+                                    $alert = $_GET['alert'];
+                                    //echo $erro;
+                                    if ($alert == 1){ 
+                                        echo "
+                                        <div class='row'>
+                                            <div class='col-sm-12 message-box-success'>
+                                            <center> <p id='login-error-text'> Dados inseridos com sucesso </center>
+                                        </div>
+                                        </div> ";
+                                    }
+                                    else if ($alert == 1062){ 
+                                        echo "
+                                        <div class='row'>
+                                            <div class='col-sm-12 message-box-error'>
+                                            <center> <p id='login-error-text'> Já existe um cadastro com esse usuário.
+                                            <br> Contate um administrador </center>
+                                        </div>
+                                        </div> ";
+                                    } 
+                                    else if ($alert == 500){ 
+                                        echo "
+                                        <div class='row'>
+                                            <div class='col-sm-12 message-box-error'>
+                                            <center> <p id='login-error-text'> Por favor, faça login novamente. </center>
+                                        </div>
+                                        </div> ";
+                                    }
+                                } 
+                            }  ?>
         
         <div id="bem-vindo" class="container-fluid">
             <div class="row">
@@ -429,19 +479,21 @@ $('#myPopover').popover();
                             <div class="panel-body">
                                 <dl class="dl-horizontal">
                                     <dt>Data: </dt>
-                                    <dd><?php echo $resultado['date']; ?> </dd>
+                                    <dd><?php echo date("d/m/Y", strtotime($resultado['date'])); ?> </dd>
                                     <dt>Concentração:</dt>
-                                    <dd><?php echo $resultado['pretime']; ?></dd>
+                                    <dd><?php $date = date_create($resultado['pretime']);
+                                                echo date_format($date,'H:i'); ?></dd>
                                     <dt>Saída:</dt>
-                                    <dd><?php echo $resultado['time']; ?></dd>
+                                    <dd><?php $date = date_create($resultado['time']);
+                                                echo date_format($date,'H:i'); ?></dd>
                                     <dt>Local:</dt>
                                     <dd><?php echo $resultado['start_city']; ?></dd>
                                     <dt>Destino: </dt>
                                     <dd><?php echo $resultado['final_city']; ?></dd>
                                     <dt>Servidor:</dt>
                                     <dd><?php echo $resultado['server_number']; ?></dd>
-                                    <dt>Discord:</dt>
-                                    <dd>https://discord.gg/U5N9gtk</dd>
+                                    <dt>Save:</dt>
+                                    <dd><button type="button" class="btn btn-success" data-dismiss="modal"><a href="<?php echo $resultado['save_link']; ?>">Baixar save</a></button></dd>
                                     <dt>Canal PX:</dt>
                                     <dd><?php echo $resultado['px_channel']; ?></dd>
                                     
@@ -452,8 +504,7 @@ $('#myPopover').popover();
                             <div class="panel-footer">
                                 <dt>Informações adicionais:</dt>
                                     <dd> <?php echo $resultado['instructions']; ?> </dd>
-                                <h4> Rota do comboio: </h4>
-                                <img src="https://media.discordapp.net/attachments/583884470986473472/596851905049919488/ets2_20190705_160605_00.png?width=832&height=468" class="img-responsive"> 
+                                
                             </div>
 
                         </div>
