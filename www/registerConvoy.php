@@ -23,7 +23,7 @@
         echo "<br> instructions: ", $instructions;
 
         if (registerConvoy($pretime, $time, $originCity, $destinationCity, $date, $saveLink, $px, $server, $instructions) == true){
-            header ("Location: colaborador.php");
+            header ("Location: colaborador.php?alert=1");
             echo "deu certo";
             echo "sessao vale: ", $_SESSION['usuarioNome'];
         } else {
