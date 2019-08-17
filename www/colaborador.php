@@ -118,6 +118,25 @@
             }, 10000);
         }, false);
     </script>
+    <script type="text/javascript">
+        function progressBarUpdate(goal, done) (){
+            var bar = document.getElementById("km-progress");
+            var result = (done/goal)*100; //divide o total de km da semana pelos km feitos para saber a porcentagem do progresso
+            var span = document.getElementById("km-percentage");
+            bar.style.width = result + '%';
+            span.innerHTML(result +"%");
+            if (result<=25){
+                bar.classList.add("progress-bar-danger");
+            } else if (result <=50){
+                bar.classList.add("progress-bar-warning");
+            } else if (result <=75){
+                bar.classList.add("progress-bar-info");
+            } else if (result >100){
+                bar.classList.add("progress-bar-success");
+            }
+        }
+    
+    </script>
 
 </head>
 <!--    <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">-->
@@ -329,6 +348,10 @@
                                         <label for="inputUsername"> Usuário: </label>
                                         <input type="text" class="form-control" id="userName" name="userName" readonly required>
                                     </div>
+                                  <div class="form-group col-sm-12">
+                                        <label for="inputTrucksbook"> Nick Trucksbook: </label>
+                                        <input type="text" class="form-control" id="trucksbook" name="trucksbook" required>
+                                  </div>
                               </div>
                                 <div class="form-row">
                                     <div class="form-group col-sm-12">
@@ -359,7 +382,88 @@
                     </div>
 
                 </div>
-            </div> <!-- fim modal comboio -->
+            </div> <!-- fim modal cadastro colaborador -->
+            <div id="modalKM" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Controle de KM </h4>
+                        </div>
+                        <div class="modal-body">
+                            <form action="registerKM.php" method="POST">
+                                <div class="form-row">
+                                    <div class="form-group col-sm-12">
+                                        <label for='inputUserName'> Selecione o colaborador </label>
+                                        <select class="form-control" name="user" id="user" required>
+                                            <?php 
+                                                global $_SG;
+                                                $sql = "SELECT id, name, trucksbook_nick FROM user";
+                                                $query = mysqli_query($_SG['link'],$sql);
+                                                while ($resultado = $query->fetch_assoc()){
+                                                    
+                                            ?>
+                                            <option value="<?php echo $resultado['id']; ?>"> <?php echo $resultado['name'] , " | ",$resultado['trucksbook_nick']; ?> </option>
+                                                
+                                            <?php 
+                                                }
+                                            ?>
+                                            
+                                        </select>
+                                    </div>
+                                        
+                                    <div class="form-group col-sm-6">
+                                        <div class="progress">
+                                          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" id="km-progress" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: 75%"> 
+                                            <span id="km-percentage"> </span>
+                                            </div>
+                                        </div>
+                                        <label for="inputSurname">Sobrenome</label>
+                                        <input type="text" class="form-control" id="surname" onkeypress="userCreator()" name="surname" id="surname" required>
+                                    </div>
+                                </div>
+                              <div class="form-row">
+                                  <div class="form-group col-sm-6">
+                                        <label for="inputPassword">Senha para primeiro acesso: </label>
+                                        <input type="text" class="form-control" oninput="userCreator()" id="password" name="password" required>
+                                  </div>
+                                  <div class="form-group col-sm-6">
+                                        <label for="inputUsername"> Usuário: </label>
+                                        <input type="text" class="form-control" id="userName" name="userName" readonly required>
+                                    </div>
+                              </div>
+                                <div class="form-row">
+                                    <div class="form-group col-sm-12">
+                                        <label for="inputPassword">Cargo </label>
+                                        <select class="form-control" name="post" id="post" required>
+                                            <?php 
+                                                global $_SG;
+                                                $sql = "SELECT * FROM posts";
+                                                $query = mysqli_query($_SG['link'],$sql);
+                                                while ($resultado = $query->fetch_assoc()){
+                                                    
+                                            ?>
+                                            <option value="<?php echo $resultado['id']; ?>"> <?php echo $resultado['name']; ?> </option>
+                                                
+                                            <?php 
+                                                }
+                                            ?>
+                                            
+                                        </select>
+                                    </div>
+                                </div>
+                              <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div> <!-- fim modal cadastro km -->
         
             
 
@@ -453,7 +557,7 @@
        <div id="informacoes" class="container-fluid text-center informacoes">
             <div class="row">
                 <div class="col-lg-8 col-sm-12">
-                    <h3 class="text-center"> Próximos comboios </h3>
+                    <h3 class="text-center"> Próximo comboio </h3>
                     <?php
                                 
                                 global $_SG;
@@ -525,6 +629,29 @@
                             <div class="row">
                                 <div class="col-sm-12 ">
                                     <button type="button" class="btn btn-primary btn-adm" data-toggle="modal" data-target="#modalComboios"> Cadastrar Comboio </button> 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <button type="button" class="btn btn-primary btn-adm " data-toggle="modal" data-target="#modalColaborador"> Cadastrar colaborador </button> 
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="panel-footer">
+                            
+                        </div>
+                    
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="text-center"> Controle de KM </h4>
+                            <p> <i> O cadastro dos KM da semana é liberado toda segunda feira </i> </p>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-sm-12 ">
+                                    <button type="button" class="btn btn-primary btn-adm" data-toggle="modal" data-target="#modalKM"> Lançamento de KM </button> 
                                 </div>
                             </div>
                             <div class="row">
