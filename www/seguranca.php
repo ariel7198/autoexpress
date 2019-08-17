@@ -78,11 +78,11 @@ function userLogin($usuario, $senha) {
          echo "erro na query";
      }
  }
-function registerUser($name, $surname, $password, $userName, $post){
+function registerUser($name, $surname, $trucksbook, $password, $userName, $post){
      include ("conexao.php");
      
-     $SQL = "INSERT INTO user (name, surname, login, first_access, password, posts_id)
-     VALUES ('$name','$surname','$userName','1','$password','$post')";
+     $SQL = "INSERT INTO user (name, surname, trucksbook_nick, login, first_access, password, active, posts_id)
+     VALUES ('$name','$surname','$trucksbook','$userName','1','$password','1','$post')";
      echo "<br> Comando executado: ", $SQL;
 
      if ($_SG['link'] -> multi_query($SQL) === true) {
