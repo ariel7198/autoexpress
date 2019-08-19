@@ -333,19 +333,19 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="https://i.imgur.com/i4vw6w8.png" class="img-responsive" alt="Funcionario">
+                    <img src="https://i.imgur.com/wFutzle.png" class="img-responsive" alt="Funcionario">
                 </div>
 
                 <div class="item">
-                    <img src="https://i.imgur.com/g882HsY.jpg" class="img-responsive" alt="Funcionario">
+                    <img src="https://i.imgur.com/5C0xWDV.png" class="img-responsive" alt="Funcionario">
                 </div>
 
                 <div class="item">
-                    <img src="https://i.imgur.com/MzWxDkU.png" class="img-responsive" alt="Funcionario">
+                    <img src="https://i.imgur.com/OZMt6Z1.jpg" class="img-responsive" alt="Funcionario">
                 </div>
 
                 <div class="item">
-                    <img src="https://i.imgur.com/yCz0Fly.png" class="img-responsive" alt="Funcionario">
+                    <img src="https://i.imgur.com/Zf1QaEk.png" class="img-responsive" alt="Funcionario">
                 </div>
 
 
