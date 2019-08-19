@@ -1,0 +1,259 @@
+body {
+    min-width: 485px;
+    color: #134568;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+/*
+.navbar {
+    margin-bottom: 0;
+    background-color:  #134568;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+}
+.navbar li a, .navbar .navbar-brand{
+    color: #fff !important;
+    -webkit-transition: 0.1s ease-in-out;
+    -moz-transition: 0.1s ease-in-out;
+    transition: background-color 0.1s , color 0.2s ease-in-out;
+}
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #134568 !important;
+    background-color: #fff !important;
+    transition-timing-function: ease-in;
+
+}
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+}
+.logo-small {
+  color: #134568;
+  font-size: 40px;
+
+}
+.logo {
+  color: #134568;
+  font-size: 200px;
+}
+@media screen and (max-width: 786px){
+    .col-sm-4{
+        text-align: center;
+        margin: 25px 0;
+    }
+}
+.aex-logo {
+    
+    height: 60px;
+    margin-top: -15px;
+    background-color: white;
+    -webkit-transition: 0.1s ease-in-out;
+    -moz-transition: 0.1s ease-in-out;
+    transition: height 0.1s, margin-left 0.1s, color 0.2s ease-in-out;
+
+}
+.logo-diferente{
+    height: 100px;
+    transition-timing-function: ease-in;
+    background-color: white;
+    box-shadow: 2px 2px 2px #232323;
+
+} */
+.bg-grey {
+    background-color: #f6f6f6;
+}
+.container-fluid {
+    padding: 60px;  
+    margin: 0;
+}
+.tumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+}
+.item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+}
+.item span {
+    font-style: normal;
+}
+footer {
+    background-color: white;
+    color: #134568;
+    height: 150px;
+/*            border-top: solid 1px #134568;*/
+}
+.glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #134568;
+}
+.slideanim {visibility:hidden;}
+.slide {
+    /* The name of the animation */
+    animation-name: slide;
+    -webkit-animation-name: slide; 
+    /* The duration of the animation */
+    animation-duration: 1s; 
+    -webkit-animation-duration: 1s;
+    /* Make the element visible */
+    visibility: visible; 
+}
+
+/*      
+/* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    } 
+}
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
+
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch; 
+}
+#sidebar {
+    padding-top: 4%;
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+}
+/*
+    ADDITIONAL DEMO STYLE, NOT IMPORTANT TO MAKE THINGS WORK BUT TO MAKE IT A BIT NICER :)
+*/
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+#sidebar {
+    /* don't forget to add all the previously mentioned styles here too */
+    background: #134568;
+/*    background: linear-gradient(150deg, #134568 40%, #1d76b5 100%);*/
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #134568;
+/*    background: linear-gradient(150deg, #134568 40%, #1d76b5 100%);*/
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+#sidebar ul li a:hover {
+    color: #134568;
+    background: white;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color:#134568 ;
+    background: white;
+}
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: white;
+    color: #134568;
+}
+
+
+
+
+
+
+.thead-dark {
+    background-color: #171b1f;
+    color: white;
+}
+
+.table-km tr {
+    background-color: ;
+}
+
+
+
+.icon-bar {
+    background-color: red;
+}
