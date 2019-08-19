@@ -46,7 +46,7 @@ function userLogin($usuario, $senha) {
     // Definimos dois valores na sessão com os dados do usuário
     $_SESSION['usuarioID'] = $resultado['id']; // Pega o valor da coluna 'id do registro encontrado no MySQL
     $_SESSION['usuarioNome'] = $resultado['name'];
-      echo "<br> nome na sessão:", $_SESSION['usuarioNome'];
+
     $_SESSION['usuarioAcesso'] = $resultado['posts_id']; //Pega o nível de acesso do usário
     $_SESSION['usuarioCargo'] = $resultado['cargo'];
     // Pega o valor da coluna 'nome' do registro encontrado no MySQL
