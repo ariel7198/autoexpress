@@ -2,6 +2,7 @@
     require_once ("conexao.php");
     include ("seguranca.php");
     protegePagina();
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +16,7 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link rel="shortcut icon" href="images/logo.ico">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
@@ -125,20 +126,119 @@
             <div class="collapse navbar-collapse" id="collabpsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Inicio</a>
+                      <button type="button sucess" id="homeButton" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Inicio</span>
+                        </button>
                     </li>
                     
                 </ul>
             </div>
+            <button type="button" id="sidebarCollapse" class="btn btn-info">
+                <i class="fas fa-align-left"></i>
+                <span>Menu</span>
+            </button>
 
         </nav>
         
-        
-        
-      
-        
+        <div class="wrapper">
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Gerenciamento de KM </h3>
+        </div>
 
+        <ul class="list-unstyled components">
+            <p>MENU</p>
+            <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                        <a href="#">Home 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Home 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Home 3</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Pages</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="#">Page 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 3</a>
+                    </li>
+                </ul>
+            </li>
+            
+        </ul>
+    </nav>
+            <div class="container-fluid container-km-table">
         
+            <div class="km-menu-header">
+            
+                <div class="row justify-content-between">
+                
+                    <div class="col-sm-6">
+                       <h1> Tabela de KM </h1>
+                    
+                    </div>
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-warning float-right">Algum uso para o botão</button>
+                    
+                    </div>
+                </div>
+            
+            </div>
+            <div class="col-sm-12">
+                <table id="editableTable" class="table table-striped">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">NOME</th>
+                      <th scope="col">META</th>
+                      <th scope="col">FEITO</th>
+                      <th scope="col">DE</th>
+                      <th scope="col">ATE</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      <?php   
+                        global $_SG;
+                        $sql = "SELECT us.name as us_name, km.id as km_id, km.goal, km.done, km.begin_date, km.end_date, km.user_id_km, us.id as us_id FROM km as km INNER JOIN user as us WHERE km.user_id_km = us.id AND begin_date BETWEEN '2019-08-26' AND '2019-08-31'";
+                        $query = mysqli_query($_SG['link'],$sql);
+                        while ($tabela = mysqli_fetch_assoc($query)){  ?>
+                      <tr id="<?php echo $tabela ['km.id']; ?>">
+                        <th scope="row"></th>
+                          <td><?php echo $tabela['us_name']; ?></td>
+                          <td><?php echo $tabela['goal']; ?></td>
+                          <td><?php echo $tabela['done']; ?></td>
+                          <td><?php echo $tabela['begin_date']; ?></td>
+                          <td><?php echo $tabela['end_date']; ?></td>
+                      </tr>
+                      <?php } ?>
+                    
+                  </tbody>
+                </table>
+
+
+            </div>
+        
+        
+        </div>
+
+</div> 
         
     <hr>
         
@@ -159,3 +259,4 @@
 
     </body>
 </html>
+
