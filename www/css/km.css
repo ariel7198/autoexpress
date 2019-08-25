@@ -290,3 +290,19 @@ ul ul a {
 .container-km-table {
     padding: 3%;
 }
+.progress-bar-success{
+    background-color: #5cb85c!important;
+}
+.progress-bar-info{
+    background-color: #5bc0de!important;
+}
+.progress-bar-warning{
+    background-color: orange!important;
+}
+
+.km-percentage-description {
+    color: black !important;
+}
+.progress{
+    height: 2rem!important;
+}
