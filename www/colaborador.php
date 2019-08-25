@@ -118,25 +118,7 @@
             }, 10000);
         }, false);
     </script>
-    <script type="text/javascript">
-        function progressBarUpdate(goal, done) (){
-            var bar = document.getElementById("km-progress");
-            var result = (done/goal)*100; //divide o total de km da semana pelos km feitos para saber a porcentagem do progresso
-            var span = document.getElementById("km-percentage");
-            bar.style.width = result + '%';
-            span.innerHTML(result +"%");
-            if (result<=25){
-                bar.classList.add("progress-bar-danger");
-            } else if (result <=50){
-                bar.classList.add("progress-bar-warning");
-            } else if (result <=75){
-                bar.classList.add("progress-bar-info");
-            } else if (result >100){
-                bar.classList.add("progress-bar-success");
-            }
-        }
     
-    </script>
 
 </head>
 <!--    <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">-->
@@ -415,11 +397,7 @@
                                     </div>
                                         
                                     <div class="form-group col-sm-6">
-                                        <div class="progress">
-                                          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" id="km-progress" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: 75%"> 
-                                            <span id="km-percentage"> </span>
-                                            </div>
-                                        </div>
+                                        
                                         <label for="inputSurname">Sobrenome</label>
                                         <input type="text" class="form-control" id="surname" onkeypress="userCreator()" name="surname" id="surname" required>
                                     </div>
