@@ -87,6 +87,35 @@
 });
     
     </script>
+    <script type="text/javascript">
+        function progressBarUpdate(goal, done, id){
+            alert("recebeu os valores: " + goal + ", e "+done);
+            var bar = document.getElementById(id);
+            var result_percentage = (done/goal)*100; //divide o total de km da semana pelos km feitos para saber a porcentagem do progress
+            var next_goal;
+            if (result_percentage < 100){
+                next_goal = goal + (goal-done);
+                console.log(next_goal);
+            } else {
+                next_goal = 8000;
+            }
+            var next_goal_span = document.getElementById("next-"+id);
+            var span = document.getElementById("km-percentage-"+id);
+            var tr_color = document.getElementById("tr-"+id);
+            bar.style.width = result_percentage + '%';
+            span.innerHTML = result_percentage +"%";
+            next_goal_span.innerHTML = next_goal;
+            if (result_percentage<=25){
+                console.log ("primeiro if");
+                bar.classList.add("progress-bar-danger");
+            } else if (result_percentage <=75){
+                bar.classList.add("progress-bar-warning");
+            } else if (result_percentage >=100){
+                bar.classList.add("progress-bar-success");
+            }
+        }
+    
+    </script>
    
 
 </head>
@@ -141,6 +170,10 @@
 
         </nav>
         
+        
+
+
+        
         <div class="wrapper">
     <!-- Sidebar -->
     <nav id="sidebar">
@@ -150,40 +183,21 @@
 
         <ul class="list-unstyled components">
             <p>MENU</p>
-            <li class="active">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li>
-                        <a href="#">Home 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Home 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Home 3</a>
-                    </li>
-                </ul>
+            <li>
+               <a href="kmRegister.php"> Lançamento de KM</a>
             </li>
             <li>
-                <a href="#">About</a>
+                <a href="km.php">Resumo de KM</a>
             </li>
-            <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Pages</a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li>
-                        <a href="#">Page 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 3</a>
-                    </li>
-                </ul>
-            </li>
+                
             
         </ul>
     </nav>
+            
+            
+            
+            
+            
             <div class="container-fluid container-km-table">
         
             <div class="km-menu-header">
@@ -195,42 +209,58 @@
                     
                     </div>
                     <div class="col-sm-4">
-                        <button type="button" class="btn btn-warning float-right">Algum uso para o botão</button>
-                    
+                        <button type="button" class="btn btn-success float-right"> + Lançamento de KM </button>
+                        
                     </div>
                 </div>
             
             </div>
             <div class="col-sm-12">
                 <table id="editableTable" class="table table-striped">
-                  <thead class="thead-dark">
+                  <thead class="thead">
                     <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">NOME</th>
-                      <th scope="col">META</th>
-                      <th scope="col">FEITO</th>
-                      <th scope="col">DE</th>
-                      <th scope="col">ATE</th>
+                        <th scope="col">#</th>
+                        <th scope="col">NOME</th>
+                        <th scope="col">META</th>
+                        <th scope="col">FEITO</th>
+                        <th scope="col">DE</th>
+                        <th scope="col">ATE</th>
+                        <th scope="col">PRÓXIMA META</th>
+                        <th scope='col'>STATUS</th>
                     </tr>
                   </thead>
                   <tbody>
                       <?php   
                         global $_SG;
-                        $sql = "SELECT us.name as us_name, km.id as km_id, km.goal, km.done, km.begin_date, km.end_date, km.user_id_km, us.id as us_id FROM km as km INNER JOIN user as us WHERE km.user_id_km = us.id AND begin_date BETWEEN '2019-08-26' AND '2019-08-31'";
+                        $date = date("Y-m-d", strtotime("-1 week"));
+                        echo $date;
+                        $sql = "SELECT us.name as us_name, km.id as km_id, km.goal, km.done, km.begin_date, km.end_date, km.user_id_km, us.id as us_id FROM km as km INNER JOIN user as us WHERE km.user_id_km = us.id AND begin_date = '".$date."'";
                         $query = mysqli_query($_SG['link'],$sql);
+                        
                         while ($tabela = mysqli_fetch_assoc($query)){  ?>
-                      <tr id="<?php echo $tabela ['km.id']; ?>">
-                        <th scope="row"></th>
+                      <tr id="tr-<?php echo $tabela['km_id'] ?>">
+                          <th scope="row"> # </th>
                           <td><?php echo $tabela['us_name']; ?></td>
                           <td><?php echo $tabela['goal']; ?></td>
                           <td><?php echo $tabela['done']; ?></td>
                           <td><?php echo $tabela['begin_date']; ?></td>
                           <td><?php echo $tabela['end_date']; ?></td>
+                          <td> <span class="next-goal" id="next-<?php echo $tabela['km_id']; ?>"> </span> </td>
+                          <td>
+                              <div class="progress" onclick="progressBarUpdate(<?php echo $tabela['goal']; ?>, <?php echo $tabela['done']; ?>, <?php echo $tabela['km_id']; ?>)">
+                                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" id="<?php echo $tabela['km_id']; ?>" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" > 
+                                        <span class="km-percentage-description" id="km-percentage-<?php echo $tabela['km_id']; ?>"> NÃO INFORMADO</span>
+                                            </div>
+                                        </div> 
+                          </td>
                       </tr>
                       <?php } ?>
                     
                   </tbody>
                 </table>
+                <script> 
+                    
+                </script>
 
 
             </div>
