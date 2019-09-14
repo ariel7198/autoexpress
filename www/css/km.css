@@ -25,76 +25,6 @@ a {
     background-color: black;
     border: none;
 }
-/*
-.navbar {
-    margin-bottom: 0;
-    background-color:  #134568;
-    z-index: 9999;
-    border: 0;
-    font-size: 12px !important;
-    line-height: 1.42857143 !important;
-    letter-spacing: 4px;
-    border-radius: 0;
-}
-.navbar li a, .navbar .navbar-brand{
-    color: #fff !important;
-    -webkit-transition: 0.1s ease-in-out;
-    -moz-transition: 0.1s ease-in-out;
-    transition: background-color 0.1s , color 0.2s ease-in-out;
-}
-.navbar-nav li a:hover, .navbar-nav li.active a {
-    color: #134568 !important;
-    background-color: #fff !important;
-    transition-timing-function: ease-in;
-
-}
-.navbar-default .navbar-toggle {
-    border-color: transparent;
-    color: #fff !important;
-}
-.logo-small {
-  color: #134568;
-  font-size: 40px;
-
-}
-.logo {
-  color: #134568;
-  font-size: 200px;
-}
-@media screen and (max-width: 786px){
-    .col-sm-4{
-        text-align: center;
-        margin: 25px 0;
-    }
-}
-.aex-logo {
-    
-    height: 60px;
-    margin-top: -15px;
-    background-color: white;
-    -webkit-transition: 0.1s ease-in-out;
-    -moz-transition: 0.1s ease-in-out;
-    transition: height 0.1s, margin-left 0.1s, color 0.2s ease-in-out;
-
-}
-.logo-diferente{
-    height: 100px;
-    transition-timing-function: ease-in;
-    background-color: white;
-    box-shadow: 2px 2px 2px #232323;
-
-} */
-/*
-.bg-grey {
-    background-color: #f6f6f6;
-}
-*/
-/*
-.container-fluid {
-    padding: 60px;  
-    margin: 0;
-}
-*/
 .tumbnail {
     padding: 0 0 15px 0;
     border: none;
@@ -220,7 +150,7 @@ a, a:hover, a:focus {
 
 #sidebar {
     /* don't forget to add all the previously mentioned styles here too */
-    background: #343a40;
+    background: #5a636b;
 /*    background: linear-gradient(150deg, #134568 40%, #1d76b5 100%);*/
     color: #fff;
     transition: all 0.3s;
@@ -246,10 +176,13 @@ a, a:hover, a:focus {
     padding: 10px;
     font-size: 1.1em;
     display: block;
+    transition: background-color 0.1s ease-in;
 }
 #sidebar ul li a:hover {
     color: #134568;
     background: black;
+    background-color: #134568;
+    transition: background-color 0.1s ease-in;
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
@@ -262,11 +195,9 @@ ul ul a {
     background: white;
     color: white;
 }
-
-
-
-
-
+td{
+/*    font-size: 1.3rem!important;*/
+}
 
 .thead-dark {
     background-color: #171b1f;
@@ -274,7 +205,6 @@ ul ul a {
 }
 
 .table-km tr {
-    background-color: ;
 }
 
 
@@ -284,7 +214,7 @@ ul ul a {
 }
 
 .km-menu-header {
-    
+    margin-bottom: 24px;
 }
 
 .container-km-table {
@@ -295,14 +225,27 @@ ul ul a {
 }
 .progress-bar-info{
     background-color: #5bc0de!important;
+    color: white;
 }
 .progress-bar-warning{
     background-color: orange!important;
 }
 
 .km-percentage-description {
-    color: black !important;
+    color: white !important;
+    text-shadow: 1px 1px 1px #474747;
+    
 }
 .progress{
     height: 2rem!important;
+    color: white;
+}
+.progress-bar-danger{
+    background-color: #d9534f!important;
+}
+.progress-bar-success{
+    background-color: #28a745!important;
+}
+.progress-bar-warning{
+    background-color: #ffc107!important;
 }
