@@ -93,6 +93,10 @@ function registerUser($name, $surname, $trucksbook, $password, $userName, $post)
          return false;
      }
  }
+function registerKM($user, $km, $periodo){
+    include ("conexao.php");
+    
+}
 
 
 
