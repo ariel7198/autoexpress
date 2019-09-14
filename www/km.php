@@ -11,7 +11,6 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/km.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link rel="shortcut icon" href="images/logo.ico">
@@ -89,9 +88,10 @@
     </script>
     <script type="text/javascript">
         function progressBarUpdate(goal, done, id){
-            alert("recebeu os valores: " + goal + ", e "+done);
+            console.log("recebeu os valores: " + goal + ", e "+done);
             var bar = document.getElementById(id);
-            var result_percentage = (done/goal)*100; //divide o total de km da semana pelos km feitos para saber a porcentagem do progress
+            var result_percentage = parseFloat((done/goal)*100).toFixed(2); //divide o total de km da semana pelos km feitos para saber a porcentagem do progress
+            console.log("porcentagem: " + result_percentage);
             var next_goal;
             if (result_percentage < 100){
                 next_goal = goal + (goal-done);
@@ -101,6 +101,7 @@
             }
             var next_goal_span = document.getElementById("next-"+id);
             var span = document.getElementById("km-percentage-"+id);
+            console.log(id);
             var tr_color = document.getElementById("tr-"+id);
             bar.style.width = result_percentage + '%';
             span.innerHTML = result_percentage +"%";
@@ -178,7 +179,7 @@
     <!-- Sidebar -->
     <nav id="sidebar">
         <div class="sidebar-header">
-            <h3>Gerenciamento de KM </h3>
+            <h4>Gerenciamento de KM </h4>
         </div>
 
         <ul class="list-unstyled components">
@@ -204,11 +205,15 @@
             
                 <div class="row justify-content-between">
                 
-                    <div class="col-sm-6">
-                       <h1> Tabela de KM </h1>
+                    <div class="col-sm-3">
+                       <h3> Resumo de KM </h3>
                     
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
+                        <h3> <?php $date = date("d/m", strtotime("-1 week"));
+                        echo $date ," até ", date("d/m"); ?> </h3>
+                    </div>
+                    <div class="col-sm-3">
                         <button type="button" class="btn btn-success float-right"> + Lançamento de KM </button>
                         
                     </div>
@@ -233,23 +238,24 @@
                       <?php   
                         global $_SG;
                         $date = date("Y-m-d", strtotime("-1 week"));
-                        echo $date;
+//                        echo $date;
                         $sql = "SELECT us.name as us_name, km.id as km_id, km.goal, km.done, km.begin_date, km.end_date, km.user_id_km, us.id as us_id FROM km as km INNER JOIN user as us WHERE km.user_id_km = us.id AND begin_date = '".$date."'";
+                        
                         $query = mysqli_query($_SG['link'],$sql);
                         
                         while ($tabela = mysqli_fetch_assoc($query)){  ?>
                       <tr id="tr-<?php echo $tabela['km_id'] ?>">
                           <th scope="row"> # </th>
                           <td><?php echo $tabela['us_name']; ?></td>
-                          <td><?php echo $tabela['goal']; ?></td>
-                          <td><?php echo $tabela['done']; ?></td>
-                          <td><?php echo $tabela['begin_date']; ?></td>
-                          <td><?php echo $tabela['end_date']; ?></td>
+                          <td><?php echo $tabela['goal'], "km"; ?></td>
+                          <td><?php echo $tabela['done'], "km"; ?></td>
+                          <td><?php echo date("d/m", strtotime($tabela['begin_date'])); ?></td>
+                          <td><?php echo date("d/m", strtotime($tabela['end_date'])); ?></td>
                           <td> <span class="next-goal" id="next-<?php echo $tabela['km_id']; ?>"> </span> </td>
                           <td>
                               <div class="progress" onclick="progressBarUpdate(<?php echo $tabela['goal']; ?>, <?php echo $tabela['done']; ?>, <?php echo $tabela['km_id']; ?>)">
                                   <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" id="<?php echo $tabela['km_id']; ?>" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" > 
-                                        <span class="km-percentage-description" id="km-percentage-<?php echo $tabela['km_id']; ?>"> NÃO INFORMADO</span>
+                                        <span class="km-percentage-description" id="km-percentage-<?php echo $tabela['km_id']; ?>"> CALCULAR</span>
                                             </div>
                                         </div> 
                           </td>
