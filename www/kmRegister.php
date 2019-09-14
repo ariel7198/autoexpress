@@ -11,7 +11,6 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/kmRegister.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link rel="shortcut icon" href="images/logo.ico">
@@ -136,7 +135,7 @@
     <!-- Sidebar -->
     <nav id="sidebar">
         <div class="sidebar-header">
-            <h3>Gerenciamento de KM </h3>
+            <h4>Gerenciamento de KM </h4>
         </div>
 
         <ul class="list-unstyled components">
@@ -162,79 +161,74 @@
             
                 <div class="row justify-content-between">
                 
-                    <div class="col-sm-6">
-                       <center><h1> Lançamento de KM </h1> </center>
+                    <div class="col-sm-8">
+                       <center><h3> Lançamento de KM <p> <?php $date = date("d/m", strtotime("-1 week"));
+                        echo $date ," até ", date("d/m"); ?> </p>  </h3> </center>
                         <hr>
                     
                     </div>
                 </div>
             
             </div>
-            <div class="col-sm-12">
-                <form action="registerUser.php" method="POST">
-                                <div class="form-row">
-                                    <div class="form-group col-sm-12">
-                                        <label for='inputUserName'> Selecione o colaborador </label>
-                                        <select class="form-control form-control-lg" name="user" id="user" required>
-                                            <?php 
-                                                global $_SG;
-                                                $sql = "SELECT id, name, trucksbook_nick FROM user";
-                                                $query = mysqli_query($_SG['link'],$sql);
-                                                while ($resultado = $query->fetch_assoc()){
-                                                    
-                                            ?>
-                                            <option value="<?php echo $resultado['id']; ?>"> <?php echo $resultado['name'] , " | ",$resultado['trucksbook_nick']; ?> </option>
-                                                
-                                            <?php 
-                                                }
-                                            ?>
-                                            
-                                        </select>
+            <div class="row">
+                <div class="col-sm-8">
+                    <form action="registerKM.php" method="POST">
+                                    <div class="form-row">
+                                        <div class="form-group col-sm-12">
+                                            <label for='inputUserName'> Selecione o colaborador </label>
+                                            <select class="form-control form-control-lg" name="user" id="user" required>
+                                                <?php 
+                                                    global $_SG;
+                                                    $date = date("Y-m-d", strtotime("-1 week"));
+                                                    $sql = "SELECT id, name, trucksbook_nick FROM user WHERE active = 1 AND id NOT IN (SELECT user_id_km FROM km WHERE begin_date = '".$date."')";
+                                                    $query = mysqli_query($_SG['link'],$sql);
+                                                    while ($resultado = $query->fetch_assoc()){
+
+                                                ?>
+                                                <option value="<?php echo $resultado['id']; ?>"> <?php echo $resultado['name'] , " | ",$resultado['trucksbook_nick']; ?> </option>
+
+                                                <?php 
+                                                    }
+                                                ?>
+
+                                            </select>
+                                        </div>
+
                                     </div>
-                                    <div class="form-group col-sm-6">
-                                        <label for="inputSurname">Sobrenome</label>
-                                        <input type="text" class="form-control" id="surname" onkeypress="userCreator()" name="surname" id="surname" required>
-                                    </div>
-                                </div>
-                              <div class="form-row">
-                                  <div class="form-group col-sm-6">
-                                        <label for="inputPassword">Senha para primeiro acesso: </label>
-                                        <input type="text" class="form-control" oninput="userCreator()" id="password" name="password" required>
+                                  <div class="form-row">
+                                      <div class="form-group col-sm-12">
+                                            <label for="inputPassword">KM feitos na semana: </label>
+                                            <input type="number" class="form-control" id="km" name="km" required>
+                                      </div>
                                   </div>
-                                  <div class="form-group col-sm-6">
-                                        <label for="inputUsername"> Usuário: </label>
-                                        <input type="text" class="form-control" id="userName" name="userName" readonly required>
-                                    </div>
-                                  <div class="form-group col-sm-12">
-                                        <label for="inputTrucksbook"> Nick Trucksbook: </label>
-                                        <input type="text" class="form-control" id="trucksbook" name="trucksbook" required>
-                                  </div>
-                              </div>
-                                <div class="form-row">
-                                    <div class="form-group col-sm-12">
-                                        <label for="inputPassword">Cargo </label>
-                                        <select class="form-control" name="post" id="post" required>
-                                            <?php 
-                                                global $_SG;
-                                                $sql = "SELECT * FROM posts";
-                                                $query = mysqli_query($_SG['link'],$sql);
-                                                while ($resultado = $query->fetch_assoc()){
-                                                    
-                                            ?>
-                                            <option value="<?php echo $resultado['id']; ?>"> <?php echo $resultado['name']; ?> </option>
-                                                
-                                            <?php 
-                                                }
-                                            ?>
-                                            
-                                        </select>
-                                    </div>
-                                </div>
-                              <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
-                            </form>
+
+                                  <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+                                </form>
 
 
-            </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <h4> Usuarios sem lançamento no período </h4>
+                          <?php 
+                            global $_SG;
+                            $date = date("Y-m-d", strtotime("-1 week"));
+                            $sql = "SELECT name, trucksbook_nick FROM user WHERE id NOT IN (SELECT user_id_km FROM km WHERE begin_date = '".$date."')";
+                            $query = mysqli_query($_SG['link'],$sql);
+                            while ($resultado = $query->fetch_assoc()){
+                          ?>
+                          <ul> 
+                        <li><?php echo $resultado['name'], " | ", $resultado['trucksbook_nick']; ?> </li>
+                           </ul>     
+                        <?php 
+                            }
+                        ?>
+                      </div>
+</div>  
+                
+                </div>
+                </div>
         
         
         </div>
