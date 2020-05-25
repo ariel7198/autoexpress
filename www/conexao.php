@@ -6,11 +6,11 @@
     $_SG['banco'] = 'autoexpress';         // Banco de dados  
     $_SG['tabela'] = 'user';       // Nome da tabela onde os usuários são salvos
 
-//    $_SG['servidor'] = '127.0.0.1';    // Servidor MySQL
-//    $_SG['usuario'] = 'u848643464_ariel';         // Usuário MySQL
-//    $_SG['senha'] = '';     // Senha MySQL
-//    $_SG['banco'] = 'u848643464_aex';         // Banco de dados  
-//    $_SG['tabela'] = 'user';       // Nome da tabela onde os usuários são salvos
+    // $_SG['servidor'] = '127.0.0.1';    // Servidor MySQL
+    // $_SG['usuario'] = 'u848643464_ariel';         // Usuário MySQL
+    // $_SG['senha'] = 'auto101express101';     // Senha MySQL
+    // $_SG['banco'] = 'u848643464_aex';         // Banco de dados  
+    // $_SG['tabela'] = 'user';       // Nome da tabela onde os usuários são salvos
                 
                 
     /* Conexão com o banco */ 

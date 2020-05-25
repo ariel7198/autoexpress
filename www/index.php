@@ -13,6 +13,7 @@
     <title> Auto Express Logística </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0d3b5b">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
@@ -231,7 +232,7 @@
     </div>
 
 
-    <div id="sobre" class="container-fluid">
+    <div id="sobre" class="container">
         <div class="row">
             <div class="col-sm-8">
                 <h2> Sobre a empresa </h2>
@@ -252,7 +253,7 @@
         </div>
     </div>
 
-    <div id="servicos" class="container-fluid text-center slideanim">
+    <div id="servicos" class="container-fluid text-center slideanim title">
         <h2> Benefícios </h2>
         <hr>
         <h4> O que oferecemos </h4>
@@ -277,7 +278,7 @@
         </div>
 
     </div>
-    <div class="container-fluid text-center slideanim">
+    <div class="container-fluid text-center slideanim ">
         <h2> Frota </h2>
         <hr>
         <h4> Nossos colaboradores tem total liberdade em escolher quais caminhões irão utilizar em suas jogatinas. Todos
@@ -317,7 +318,7 @@
     </div>
 
 
-    <div id="comboios" class="container-fluid text-center">
+    <div id="comboios" class="container-fluid text-center title">
         <h2> Comboios </h2>
         <hr>
         <h4> Participe dos comboios entrando em nosso Discord </h4> <br>
@@ -365,22 +366,64 @@
     </div>
 
 
-    <div id="contato" class="container-fluid">
-        <h2 class="text-center"> Contato </h2>
-        <hr>
+    <div id="contato" class="container-fluid text-center">
+        <h2> Contato </h2>
         <br>
-        <div class="row">
-            <div class="col-sm-4 slideanim text-center">
-                <p> Curta nossa página no Facebook </p>
-                <div class="fb-page" data-href="https://www.facebook.com/autoexpresstransporte/" data-tabs="timeline"
-                    data-small-header="false" data-adapt-container-width="100%" data-hide-cover="false"
-                    data-show-facepile="false">
-                    <blockquote cite="https://www.facebook.com/autoexpresstransporte/" class="fb-xfbml-parse-ignore"><a
-                            href="https://www.facebook.com/autoexpresstransporte/">AutoExpress Virtual</a></blockquote>
+        <div class="row ">
+            
+            <div class="col-md-12">
+                <div class="social-icons social-row">
+                    <div class="col-sm-12 social-facebook social-metro">
+                    <a href="https://www.facebook.com/autoexpresslogistica/" target="_blank"> 
+                        <img src="https://i.imgur.com/GMOP1B8.png" class="social-facebook"
+                                height="100px"> </a>
+                    </div>
+                    <div class="col-sm-12 social-trucksbook social-metro">
+                    <a href="https://trucksbook.eu/company/13803" target="_blank"> <img
+                                src="https://i.imgur.com/b1Z7GaI.png"
+                                class="social-trucksbook" height="60px"> </a>
+                    </div>
+                    <div class="col-sm-12 social-discord social-metro">
+                    <a href="https://discord.gg/HUX4gY" target="_blank"> <img
+                                src="https://discordapp.com/assets/7998ff7e4d140a98fdde8e1683167c09.svg" height="90px">
+                        </a>
+                    </div>
+                    <div class="col-sm-12 social-youtube social-metro">
+                    <a href="https://www.youtube.com/channel/UCqQ-tw6MbfDd0LAKlBiCDjw" target="_blank"> <img
+                                src="https://abrilexame.files.wordpress.com/2017/08/new-youtube-logo-840x402.jpg?quality=70&strip=info&w=840"
+                                height="70px"> </a>
+                    </div>
+                    
+                
+                
                 </div>
-
+                
+                
+<!--
+                <div class="row social-row">
+                    <a href="https://www.facebook.com/autoexpresstransporte/" target="_blank"> 
+                        <img src="https://static.tumblr.com/jjqbi6t/kb5pdmleg/facebook.png" class="social-facebook"
+                                height="36px"> </a>
+                    
+                    <a href="https://trucksbook.eu/company/13803" target="_blank"> <img
+                                src="https://static.tumblr.com/jjqbi6t/OpNpdlwj7/trucksbook-icon.png"
+                                class="social-trucksbook" height="36px"> </a>
+                    
+                    <a href="https://www.youtube.com/channel/UCqQ-tw6MbfDd0LAKlBiCDjw" target="_blank"> <img
+                                src="https://imagepng.org/wp-content/uploads/2017/09/youtube-play-icone.png"
+                                height="36px"> </a>
+                    
+                    <a href="https://discord.gg/HUX4gY" target="_blank"> <img
+                                src="https://discordapp.com/assets/f8389ca1a741a115313bede9ac02e2c0.svg" height="45px">
+                        </a>
+                
+                </div>
+-->
 
             </div>
+            
+            
+<!--
             <div id="tb-bt-hide" class="col-sm-4 slideanim text-center">
                 <p> Faça parte do nosso Trucksbook </p>
                 <img src="https://static.tumblr.com/jjqbi6t/5RBpdh3o8/trucksboook.png" height="70px">
@@ -388,12 +431,16 @@
                     </button> </a>
 
             </div>
+-->
+<!--
             <div class="col-sm-4 slideanim text-center">
                 <p> Participe do nosso Discord </p>
                 <iframe src="https://discordapp.com/widget?id=398934623956107264&theme=dark" width="350" height="500"
                     allowtransparency="true" frameborder="0"></iframe>
             </div>
+-->
         </div>
+<!--
         <div id="tb-bt" class="row tb slideanim text-center">
             <div class="col-sm-12">
                 <p> Faça parte do nosso Trucksbook </p>
@@ -402,55 +449,33 @@
                     </button> </a>
             </div>
         </div>
+-->
     </div>
 
     <hr>
     <footer id="rodape" class="container-fluid text-center">
         <div class="row">
-            <div class="col-md-4 col-12">
-                <img class="img-circle" src="https://static.tumblr.com/jjqbi6t/YWnpe5fxy/logo.png" height="150px">
+            <div class="col-12">
+                <img class="img-circle" src="https://static.tumblr.com/jjqbi6t/YWnpe5fxy/logo.png" height="250px">
             </div>
-            <div class="col-md-4 col-12">
+            <div class="col-12 creditos">
 
-                Auto Express Logistica™ <br> 2018 <br>
-                trucksbook.eu/company/13803
-            </div>
-
-            <div class="col-md-4 col-12">
-                <div class="row">
-                    <h4> Contato </h4>
-                </div>
-                <div class="row">
-
-                    <div class="col-md-3 col-sm-12 social-footer">
-                        <a href="https://www.facebook.com/autoexpresstransporte/" target="_blank"> <img
-                                src="https://static.tumblr.com/jjqbi6t/kb5pdmleg/facebook.png" class="social-facebook"
-                                height="36px"> </a>
-
-                    </div>
-                    <div class="col-md-3 col-sm-12 social-footer">
-                        <a href="https://trucksbook.eu/company/13803" target="_blank"> <img
-                                src="https://static.tumblr.com/jjqbi6t/OpNpdlwj7/trucksbook-icon.png"
-                                class="social-trucksbook" height="36px"> </a>
-
-
-                    </div>
-                    <div class="col-md-3 col-sm-12 social-footer">
-                        <a href="https://www.youtube.com/channel/UCqQ-tw6MbfDd0LAKlBiCDjw" target="_blank"> <img
-                                src="https://imagepng.org/wp-content/uploads/2017/09/youtube-play-icone.png"
-                                height="36px"> </a>
-                    </div>
-                    <div class="col-md-3 col-sm-12 social-footer">
-                        <a href="https://www.youtube.com/channel/UCqQ-tw6MbfDd0LAKlBiCDjw" target="_blank"> <img
-                                src="https://discordapp.com/assets/f8389ca1a741a115313bede9ac02e2c0.svg" height="45px">
-                        </a>
-                    </div>
-                </div>
+                Auto Express Logistica <br> 2020 <br>
 
             </div>
-
-
         </div>
+            
+        
+        <div class="row git">
+            <div class="col-12">
+            <a href="https://github.com/ariel7198"> <img src="https://i.imgur.com/SL1dLS5.png" height="30px"> ariel7198</a>
+            </div>
+        </div>
+
+            
+
+
+        
     </footer>
 
 </body>

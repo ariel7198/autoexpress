@@ -5,13 +5,19 @@ body {
 #comboios {
     padding: 5px;
 }
+.title{
+    border-top: 4px solid #0d3b5b;
+    background: #f0f0f0; 
+}
+
 
 #contato {
     padding: 5px;
 }
 
 #rodape {
-    padding: 5px;
+    padding: 0px;
+    background: #f0f0f0;
 }
 
 #jumbo {
@@ -111,7 +117,7 @@ a {
 
 .jumbotron {
     /*            background-color: #31A2F2;*/
-    background-image: linear-gradient(rgba(13, 13, 13, .55), rgba(13, 13, 13, .55)), url(https://static.tumblr.com/jjqbi6t/LiMpc54pl/capa.png);
+    background-image: linear-gradient(rgba(13, 13, 13, .55), rgba(13, 13, 13, .55)), url(https://i.imgur.com/dCpEZyu.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -131,11 +137,17 @@ a {
     .container-fluid {
         padding: 60px 110px;    
     }
+    .container{
+        /*padding: 60px 110px;*/
+    }
     
 }
 @media screen and (max-width: 937px ){
     .container-fluid {
         padding: 30px 30px;
+    }
+    .container {
+        /*padding: 30px 30px;*/
     }
 }
 
@@ -212,11 +224,6 @@ footer .glyphicon {
     visibility: visible;
 }
 
-.social-discord:hover {
-    content: url('https://discordapp.com/assets/f8389ca1a741a115313bede9ac02e2c0.svg');
-    height: 40px;
-    transition: content .2s;
-}
 
 /*        CARDS FUNCIONARIOS */
 
@@ -426,4 +433,52 @@ footer .glyphicon {
 
 .social-footer {
     margin-top: 5px;
+}
+
+.social-row {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    align-items: center;
+}
+@media (max-width: 931px){
+    .social-row{
+        grid-template-columns: 100%;
+    }
+}
+
+.social-facebook {
+    background: white;
+}
+.social-metro{
+    display: grid;
+    align-items: center;
+    height: 200px;
+    text-align: center;
+}
+
+.social-youtube {
+    background: #ffffff;
+}
+
+.social-discord {
+    background: #7289da;
+}
+
+.social-trucksbook {
+    background: #3a72bd;
+}
+
+.git {
+/*    background: #f0f0f0;*/
+    background: white;
+    padding: 15px;
+    color: white;
+}
+.git a{
+    color: black;
+    text-decoration: none;
+}
+
+.creditos {
+    padding: 15px;
 }

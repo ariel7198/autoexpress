@@ -70,7 +70,7 @@
         .jumbotron {
 /*            background-color: #31A2F2;*/
             
-            background-image: linear-gradient(rgba(13,13,13,.55),rgba(13,13,13,.55)), url(https://static.tumblr.com/jjqbi6t/LiMpc54pl/capa.png);
+            background-image: linear-gradient(rgba(13,13,13,.55),rgba(13,13,13,.55)), url(https://cdn.discordapp.com/attachments/545316524068569098/686391567048638504/ets2_20200308_225229_00.png);
             background-repeat: no-repeat;
             background-size: cover;
             background-attachment: fixed;
@@ -95,6 +95,12 @@
                 padding: 30px 30px;
             }
         }
+@media screen and (max-width: 651px){
+    .jumbotron{
+        padding-left: 50px !important;
+        padding-right: 50px;
+    }
+}
         .tumbnail {
             padding: 0 0 15px 0;
             border: none;
@@ -118,7 +124,7 @@
         footer {
             background-color: white;
             color: #134568;
-            height: 150px;
+/*            height: 150px;*/
         }
         footer .glyphicon {
             font-size: 20px;
@@ -186,4 +192,24 @@
 
 .exigencias {
     color: #134568;
+}
+#rodape {
+    padding: 5px;
+    background: #f0f0f0;
+}
+
+.git {
+    background: #f0f0f0;
+    padding: 15px;
+    color: white;
+}
+.git a{
+    color: black;
+    text-decoration: none;
+}
+#comboios title {
+    
+}
+.creditos {
+    padding: 15px;
 }
