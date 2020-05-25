@@ -16,7 +16,7 @@
                     <!--<li> <a href="https://autoexpresslogistica.tumblr.com/colaboradores"> COLABORADORES </a></li> -->
                     <li> <a href="index.php#contato"> CONTATO </a></li>
                     <li> <a href="recrutamento.html"> RECRUTAMENTO </a></li>
-                    <li> <a href="colaboradores.html"> EQUIPE </a></li>
+                    <li> <a href="colaboradores.php"> EQUIPE </a></li>
                     <li> <?php 
                             if (!isset($_SESSION['usuarioID'])) { 
                                 echo "<button type='button' class='btn btn-info btn-login'  data-toggle='modal'

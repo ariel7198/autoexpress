@@ -218,6 +218,11 @@
     grid-auto-flow: dense;
     margin-bottom: 50px
 }
+@media (max-width: 768px){
+    .grid-item{
+        grid-template-columns: repeat(2,1fr)
+    }
+}
 
 .title-cargo {
     font-size: 2em;
