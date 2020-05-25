@@ -67,6 +67,10 @@
             box-shadow: 2px 2px 2px #232323;
             
         }
+        .btn-login{
+            margin-top: 10% !important;
+            transition: background-color 0.2s ease-in-out;
+        }
         .jumbotron {
 /*            background-color: #31A2F2;*/
             

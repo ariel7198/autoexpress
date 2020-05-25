@@ -76,40 +76,15 @@
     
     <body>
         
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="colapse" data-target="#myNavbar"> 
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#"> <img src="images/logo.png" class="aex-logo img-circle"> </a>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li> <a href="#sobre"> SOBRE </a></li>
-                        <!--<li> <a href="https://autoexpresslogistica.tumblr.com/colaboradores"> COLABORADORES </a></li> -->
-                        <li> <a href="#contato"> CONTATO </a></li>
-                        <li> <a href="recrutamento.html"> RECRUTAMENTO </a></li>
-                        <li> <?php 
-                                if (!isset($_SESSION['usuarioID'])) { 
-                                    echo "<button type='button' class='btn btn-info btn-login'  data-toggle='modal'
-                                                            data-target='#modalLogin'>LOGIN</button>'}";
-                                    
-                                } 
-                                    else { 
-                                        echo "<a href='colaborador.php'> COLABORADOR </a> ";
-                                       }
-                            ?>                
-                        <li>
-    
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <script> 
+        $(function (){
+            $("#header").load("header.php");
+            $("#footer").load("footer.html");
+        });
+    </script>
+    <div id="header"> </div>
         
-        <div class="jumbotron text-center" cla>
+        <div class="jumbotron text-center">
             <p>Auto Express</p>
             <h1>Colaboradores</h1>
         </div>
@@ -169,10 +144,10 @@
                     <div class="card-cargo">
                         <div class="title-colaborador">
                             MathBru <br> 
-                            <div class="badge badge-comboio"> Gerencia de Comboio </div> 
+                            <div class="badge badge-comboio"> Gerente de Comboio </div> 
                         </div>
                         <div class="colaborador-foto">
-                            <img src="images/colaboradores/rinaldo.jpeg" class="colaborador-img">
+                            <img src="images/colaboradores/default.png" class="colaborador-img">
                         </div>
                     
                     </div>
@@ -184,6 +159,15 @@
                     <div class="card-cargo">
                         <div class="title-colaborador">
                             Netolee <br> <div class="badge badge-rh"> Recursos Humanos </div> 
+                        </div>
+                        <div class="colaborador-foto">
+                            <img src="images/colaboradores/default.png" class="colaborador-img">
+                        </div>
+                    
+                    </div>
+                    <div class="card-cargo">
+                        <div class="title-colaborador">
+                            Leuzinho <br> <div class="badge badge-rh"> Recursos Humanos </div> 
                         </div>
                         <div class="colaborador-foto">
                             <img src="images/colaboradores/default.png" class="colaborador-img">
@@ -210,20 +194,7 @@
         
     <hr>
         
-        <footer class="container-fluid text-center">
-            <div class="row align-items-start">
-                <div class="col-sm-6">
-                Auto Express Logistica™ <br> 2018 <br>
-                    trucksbook.eu/company/13803
-                    
-                </div>
-                <div class="col-sm-6">
-                <img src="images/logo.png" height="80px">
-                </div>
-                
-            
-            </div>
-        </footer>
+        <div id="footer"></div>
 
     </body>
 </html>

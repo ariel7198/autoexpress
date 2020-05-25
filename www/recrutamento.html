@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title> Auto Express Logística </title>
+  <title> Auto Express Logística | Recrutamento </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="theme-color" content="#0d3b5b">
@@ -69,53 +69,19 @@
     
     
     </script>
-    <script>
-    $(function() {
-    var img = $("#animate"),
-        width = img.get(0).width,
-        screenWidth = $(window).width(),
-        duration = 5000;
-
-    function animatePlane() {
-        img.css("left", -width)
-           .animate({
-                "left": screenWidth
-            }, duration, animatePlane);
-    }
-
-    animatePlane();
-    }); </script>
-    <script>
-    // Select all elements with data-toggle="popover" in the document
-$('[data-toggle="popover"]').popover(); 
-
-// Select a specified element
-$('#myPopover').popover();
-    </script>
 
 </head>
 <!--    <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">-->
     
     <body>
         
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="colapse" data-target="#myNavbar"> 
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#"> <img src="images/logo.png" class="aex-logo img-circle"> </a>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li> <a href="index.php"> INÍCIO </a></li>
-                    
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <script> 
+        $(function (){
+            $("#header").load("header.php");
+            $("#footer").load("footer.html");
+        });
+    </script>
+    <div id="header"> </div>
         
         <div class="jumbotron text-center" cla>
             <p>Trabalhe conosco</p>
@@ -151,7 +117,7 @@ $('#myPopover').popover();
             <div class="row slideanim">
                 <div class="col-sm-4">
                   <span class="logo-small"> <img src="images/ets-logo.png" height="50px"></span>
-                  <h4> Possuir ETS2 ou ATS </h4>
+                  <h4> Possuir ETS2 </h4>
                     <p> Você precisa possuir uma cópia original do game. Comboios fazem parte da empresa e para utilizar o TruckersMP você precisa possuir o game na Steam.</p>
                     
                 </div>
@@ -161,7 +127,7 @@ $('#myPopover').popover();
                   <p>Para manter a organização da empresa e auxiliar no crescimento da mesma, exigimos o uso do Truckbook </p>
                 </div>
                 <div class="col-sm-4">
-                  <span class="glyphicon glyphicon-road logo-small"></span>
+                  <span class="glyphicon glyphicon-road logo-small" height="40px"></span>
                   <h4>Mínimo de 5000KM semanais</h4>
                   <p>Para participar dos eventos da empresa, é necessário cumprir uma meta de 5000Km semanais</p>
                 </div>
