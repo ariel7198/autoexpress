@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/general.css">
   <link rel="stylesheet" href="css/colaboradores.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link rel="shortcut icon" href="images/logo.ico">
@@ -86,6 +87,7 @@
         
         <div class="jumbotron text-center">
             <p>Auto Express</p>
+            <br>
             <h1>Colaboradores</h1>
         </div>
         
@@ -99,31 +101,39 @@
                 
                 <div class="container-diretoria grid-item">
                     <div class="card-cargo">
+<!--
                         <div class="title-colaborador">
                             Luiz Fernando Sena <br> <div class="badge badge-diretoria"> Diretoria </div> 
                         </div>
                         <div class="colaborador-foto">
                             <img src="images/colaboradores/nandinho2.png" class="colaborador-img">
                         </div>
+-->
+                        <img src="images/colaboradores/nandinho_cracha.png" class="cracha_img"> 
                     
                     </div>
                     <div class="card-cargo">
+<!--
                         <div class="title-colaborador">
                             Rinaldo Silva <br> <div class="badge badge-diretoria"> Diretoria </div> 
                         </div>
                         <div class="colaborador-foto">
                             <img src="images/colaboradores/rinaldo.jpeg" class="colaborador-img">
                         </div>
+-->
+                        <img src="images/colaboradores/rinaldo_cracha.png" class="cracha_img">
                     
                     </div>
                     <div class="card-cargo">
+<!--
                         <div class="title-colaborador">
                             Ariel Campos <br> <div class="badge badge-gerencia-geral"> Gerente Geral </div> 
                         </div>
                         <div class="colaborador-foto">
                             <img src="images/colaboradores/ariel.PNG" class="colaborador-img">
                         </div>
-                    
+-->
+                        <img src="images/colaboradores/ariel_cracha.png" class="cracha_img">
                     </div>
                 </div>
                 
@@ -133,6 +143,7 @@
                 
                 <div class="container-gerencia grid-item">
                     <div class="card-cargo">
+<!--
                         <div class="title-colaborador">
                             Gaguzão <br> 
                             <div class="badge badge-comboio"> Gerente de Comboio </div> 
@@ -140,8 +151,11 @@
                         <div class="colaborador-foto">
                             <img src="images/colaboradores/gaguzao.PNG" class="colaborador-img">
                         </div>
+-->
+                         <img src="images/colaboradores/gaguzao_cracha.png" class="cracha_img">
                     </div>
                     <div class="card-cargo">
+<!--
                         <div class="title-colaborador">
                             MathBru <br> 
                             <div class="badge badge-comboio"> Gerente de Comboio </div> 
@@ -149,6 +163,8 @@
                         <div class="colaborador-foto">
                             <img src="images/colaboradores/mathbru.PNG" class="colaborador-img">
                         </div>
+-->
+                        <img src="images/colaboradores/mathbru_cracha.png" class="cracha_img">
                     
                     </div>
                 </div>
@@ -157,14 +173,18 @@
                 <h4 class="title-cargo"> Recursos Humanos e Recrutamento </h4>
                 <div class="container-rh grid-item">
                     <div class="card-cargo">
+<!--
                         <div class="title-colaborador">
                             Netolee <br> <div class="badge badge-rh"> Recursos Humanos </div> 
                         </div>
                         <div class="colaborador-foto">
                             <img src="images/colaboradores/netolee.PNG" class="colaborador-img">
                         </div>
+-->
+                         <img src="images/colaboradores/netolee_cracha.png" class="cracha_img">
                     
                     </div>
+<!--
                     <div class="card-cargo">
                         <div class="title-colaborador">
                             Leuzinho <br> <div class="badge badge-rh"> Recursos Humanos </div> 
@@ -174,7 +194,9 @@
                         </div>
                     
                     </div>
+-->
                     <div class="card-cargo">
+<!--
                         <div class="title-colaborador">
                             Irineu <br> 
                             <div class="badge badge-recrutamento"> Recrutamento </div> 
@@ -182,6 +204,8 @@
                         <div class="colaborador-foto">
                             <img src="images/colaboradores/default.png" class="colaborador-img">
                         </div>
+-->
+                        <img src="images/colaboradores/irineu_cracha.png" class="cracha_img">
                     </div>
                 </div>
             </div>

@@ -13,3 +13,23 @@
     color: black;
     text-decoration: none;
 }
+.bt-contratando {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    font-weight: bold;
+    background-color: #f7b42c;
+    background-image: linear-gradient(315deg, #f7692c 0%, #fc575e 74%);
+    height: 5rem;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 15px #0f0f0f;
+}
+.bt-contratando:hover{ 
+    text-decoration: none !important;
+    color: white !important;
+}
+.bt-contratando a {
+    text-decoration: none;
+    color: white !important;
+}

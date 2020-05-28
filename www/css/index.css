@@ -1,5 +1,5 @@
 body {
-    min-width: 400px;
+/*    min-width: 400px;*/
 }
 
 #comboios {
@@ -34,81 +34,13 @@ a {
     color: white;
 }
 
-.navbar {
-    margin-bottom: 0;
-    /*            box-shadow: 2px 2px 2px #56595c;*/
-    /*            background-color: #31A2F2;*/
-    background: linear-gradient(150deg, #134568 0%, #052d4a 100%);
-    z-index: 9999;
-    border: 0;
-    font-size: 12px !important;
-    line-height: 1.42857143 !important;
-    letter-spacing: 4px;
-    border-radius: 0;
-}
 
-.navbar li a, .navbar .navbar-brand {
-    color: #fff !important;
-    -webkit-transition: 0.1s ease-in-out;
-    -moz-transition: 0.1s ease-in-out;
-    transition: background-color 0.1s, color 0.2s ease-in-out;
-}
-
-.navbar-nav li a:hover, .navbar-nav li.active a {
-    color: #134568 !important;
-    background-color: #fff !important;
-    transition-timing-function: ease-in;
-}
-
-.navbar-default .navbar-toggle {
-    border-color: transparent;
-    color: #fff !important;
-}
-
-.logo-small {
-    color: #134568;
-    font-size: 40px;
-}
-
-.logo {
-    color: #134568;
-    font-size: 200px;
-}
 
 @media screen and (max-width: 786px) {
     .col-sm-4 {
         text-align: center;
         margin: 25px 0;
     }
-}
-
-.aex-logo {
-    height: 150px;
-    margin-top: -36px;
-    /*            background-color: #31A2F2;*/
-    background-color: white;
-    -webkit-transition: 0.1s ease-in-out;
-    -moz-transition: 0.1s ease-in-out;
-    transition: height 0.1s, margin-left 0.1s, color 0.2s ease-in-out;
-}
-
-@media screen and (max-width: 768px) {
-    .aex-logo {
-        margin-top: -25px;
-        height: 70px;
-        transition-timing-function: ease-in;
-        /*            background-color: #31A2F2;*/
-        background-color: white;
-        box-shadow: 2px 2px 2px #232323;
-    }
-}
-
-.logo-diferente {
-    height: 100px;
-    transition-timing-function: ease-in;
-    /*            background-color: #31A2F2;*/
-    background-color: white;
-    box-shadow: 2px 2px 2px #232323;
 }
 
 .jumbotron {

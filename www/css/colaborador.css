@@ -1,5 +1,5 @@
 body {
-    min-width: 400px;
+/*    min-width: 400px;*/
     color: #134568;
 /*    max-width: 1700px;*/
 }
@@ -21,65 +21,11 @@ a {
         padding: 1px;
     }
 }
-.navbar {
-    margin-bottom: 0;
-    /*            box-shadow: 2px 2px 2px #56595c;*/
-    /*            background-color: #31A2F2;*/
-    background-color:  #134568;
-    z-index: 9999;
-    border: 0;
-    font-size: 12px !important;
-    line-height: 1.42857143 !important;
-    letter-spacing: 4px;
-    border-radius: 0;
-}
-.navbar li a, .navbar .navbar-brand{
-    color: #fff !important;
-    -webkit-transition: 0.1s ease-in-out;
-    -moz-transition: 0.1s ease-in-out;
-    transition: background-color 0.1s , color 0.2s ease-in-out;
-}
-.navbar-nav li a:hover, .navbar-nav li.active a {
-    color: #134568 !important;
-    background-color: #fff !important;
-    transition-timing-function: ease-in;   
-}
-.navbar-default .navbar-toggle {
-    border-color: transparent;
-    color: #fff !important;
-}
-.logo-small {
-    color: #134568;
-    font-size: 40px;
-}
-.logo {
-    color: #134568;
-    font-size: 200px;
-}
 @media screen and (max-width: 786px){
     .col-sm-4{
         text-align: center;
         margin: 25px 0;
     }
-}
-.aex-logo {
-    height: 105px;
-    margin-top: -36px;
-    /*            background-color: #31A2F2;*/
-    background-color: white;
-    -webkit-transition: 0.1s ease-in-out;
-    -moz-transition: 0.1s ease-in-out;
-    transition: height 0.1s, margin-left 0.1s, color 0.2s ease-in-out;
-    box-shadow: 2px 2px 2px #232323;
-
-}
-.logo-diferente{
-    height: 100px;
-    transition-timing-function: ease-in;
-    /*            background-color: #31A2F2;*/
-    background-color: white;
-    box-shadow: 2px 2px 2px #232323;
-
 }
 .bg-grey {
     background-color: #f6f6f6;
@@ -114,11 +60,6 @@ a {
 }
 .item span {
     font-style: normal;
-}
-footer {
-    background-color: white;
-    color: #134568;
-    height: 150px;
 }
 .glyphicon {
     font-size: 20px;
@@ -181,12 +122,6 @@ footer {
     letter-spacing: 0.3px;
     font-size: 1.4rem;
 }
-
-.modal {
-
-}
-
-
 .badge {
   padding: 4px 12px 3px;
   font-size: 12.025px;
@@ -247,8 +182,6 @@ footer {
 .modal-title {
     text-align: center;
 }
-
-
 .message-box-success{
     background-color: rgba(3, 135, 5, 0.8);
     height: 50px;
@@ -268,7 +201,7 @@ footer {
     padding-top: 5px;
 }
 .save-link{
-    overflow:hidden; 
+    overflow: hidden; 
     text-overflow: ellipsis;
 }
 .btn-tutoriais {

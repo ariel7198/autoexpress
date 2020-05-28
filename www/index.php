@@ -16,6 +16,8 @@
     <meta name="theme-color" content="#0d3b5b">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="icon" type="image/png" href="https://static.tumblr.com/jjqbi6t/eKvpdlxph/apple-icon-precomposed.png">
 
@@ -190,7 +192,7 @@
             </div>
             <div class="col-sm-4">
                 <!--                    <span class="glyphicon glyphicon-road logo"></span> -->
-                <img src="https://static.tumblr.com/jjqbi6t/YWnpe5fxy/logo.png" height="300px" width="300px">
+                <img src="https://static.tumblr.com/jjqbi6t/YWnpe5fxy/logo.png" height="200px" width="200px">
             </div>
         </div>
     </div>

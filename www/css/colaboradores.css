@@ -1,86 +1,36 @@
         body {
-            min-width: 485px;
+/*            min-width: 485px;*/
             color: #134568;
+            background: #fafafa;
         }
         a {
             text-decoration: none;
             color: white;
         }
-        .navbar {
-            margin-bottom: 0;
-/*            box-shadow: 2px 2px 2px #56595c;*/
-/*            background-color: #31A2F2;*/
-            background-color:  #134568;
-            z-index: 9999;
-            border: 0;
-            font-size: 12px !important;
-            line-height: 1.42857143 !important;
-            letter-spacing: 4px;
-            border-radius: 0;
-        }
-        .navbar li a, .navbar .navbar-brand{
-            color: #fff !important;
-            -webkit-transition: 0.1s ease-in-out;
-            -moz-transition: 0.1s ease-in-out;
-            transition: background-color 0.1s , color 0.2s ease-in-out;
-        }
-        .navbar-nav li a:hover, .navbar-nav li.active a {
-            color: #134568 !important;
-            background-color: #fff !important;
-            transition-timing-function: ease-in;
-            
-        }
-        .navbar-default .navbar-toggle {
-            border-color: transparent;
-            color: #fff !important;
-        }
-        .logo-small {
-          color: #134568;
-          font-size: 40px;
-            
-        }
-        .logo {
-          color: #134568;
-          font-size: 200px;
-        }
+        
         @media screen and (max-width: 786px){
             .col-sm-4{
                 text-align: center;
                 margin: 25px 0;
             }
         }
-        .aex-logo {
-            height: 150px;
-            margin-top: -36px;
-/*            background-color: #31A2F2;*/
-            background-color: white;
-            -webkit-transition: 0.1s ease-in-out;
-            -moz-transition: 0.1s ease-in-out;
-            transition: height 0.1s, margin-left 0.1s, color 0.2s ease-in-out;
-            
-        }
-        .logo-diferente{
-            height: 100px;
-            transition-timing-function: ease-in;
-/*            background-color: #31A2F2;*/
-            background-color: white;
-            box-shadow: 2px 2px 2px #232323;
-            
-        }
         .jumbotron {
 /*            background-color: #31A2F2;*/
-            
             background-image: linear-gradient(rgba(13,13,13,.55),rgba(13,13,13,.55)), url(https://static.tumblr.com/jjqbi6t/r2updiwbk/capa_colaboradores.png);
             background-repeat: no-repeat;
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
-            
             color: #ffffff;
             font-family: 'Montserrat', sans-serif;
-            padding: 200px;
-            height: 600px;
+/*            padding-top: 50px;*/
+            height: 100vh;
             text-shadow: 1px 1px #383838;
+/*            display:flex;*/
+            padding-top: 30vh;
+            text-align: center;
+/*            justify-content:center;*/
+/*            align-items:center;*/
         }
         .bg-grey {
             background-color: #f6f6f6;
@@ -109,12 +59,6 @@
             font-style: normal;
         }
         .glyphicon {
-            font-size: 20px;
-            margin-bottom: 20px;
-            color: #134568;
-        }
-
-        footer .glyphicon {
             font-size: 20px;
             margin-bottom: 20px;
             color: #134568;
@@ -188,8 +132,8 @@
 }
 
 .colaborador-img {
-    height: 200px;
-    width: 200px;
+    height: 100px;
+    width: 100px;
     border-radius: 100%;
 }
 
@@ -207,8 +151,9 @@
     background: #f5f5f5;
     border: 1px solid #ededed;
     max-width: 300px;
-    
     box-shadow: 2px 2px 5px #f2f2f2;
+    align-self: center;
+  justify-self: center;
 }
 
 .grid-item {
@@ -218,9 +163,15 @@
     grid-auto-flow: dense;
     margin-bottom: 50px
 }
+@media (max-width: 994px){
+    .grid-item{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 @media (max-width: 768px){
     .grid-item{
-        grid-template-columns: repeat(2,1fr)
+        grid-template-columns: repeat(1,1fr);
+        align-items: center;
     }
 }
 
@@ -260,4 +211,9 @@ hr {
 
 .badge-recrutamento {
     background: #F1C40F;
+}
+
+.cracha_img {
+    width: 300px;
+/*    border-radius: 50%;*/
 }

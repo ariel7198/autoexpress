@@ -1,5 +1,8 @@
+
+    <link rel="stylesheet" href="css/general.css">
+<link rel="stylesheet" href="css/header.css">
 <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
+        <div class="container container-header">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <span class="icon-bar"></span>
@@ -20,7 +23,7 @@
                     <li> <?php 
                             if (!isset($_SESSION['usuarioID'])) { 
                                 echo "<button type='button' class='btn btn-info btn-login'  data-toggle='modal'
-                                                        data-target='#modalLogin'>LOGIN</button>'}";
+                                                        data-target='#modalLogin'>LOGIN</button>";
                                 
                             } 
                                 else { 
