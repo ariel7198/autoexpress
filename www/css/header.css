@@ -50,11 +50,11 @@
 
 
 .logo-diferente {
-    height: 100px;
+    height: 100px !important;
     transition-timing-function: ease-in;
     /*            background-color: #31A2F2;*/
-    background-color: white;
-    box-shadow: 2px 2px 2px #232323;
+    background-color: white !important;
+    box-shadow: 2px 2px 2px #232323 !important;
 }
 
 

@@ -13,7 +13,7 @@
     <title> Auto Express Logística </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0d3b5b">
+    <meta name="theme-color" content="#0D3B5B">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     
@@ -24,7 +24,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
+    <script> 
+        $(function (){
+            $("#header").load("header.php");
+            $("#footer").load("footer.html");
+        });
+    </script>
     <script>
         $(document).ready(function () {
             // Add smooth scrolling to all links in navbar + footer link
@@ -116,23 +121,20 @@
             js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.1';
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
-    <script> 
-        $(function (){
-            $("#header").load("header.php");
-            $("#footer").load("footer.html");
-        });
-    </script>
+    
     <div id="header"> </div>
     
     
+<!--
     <script type="text/javascript">
         jQuery(function () {
             $(".navbar-toggle").click(function () {
                 $(".aex-logo").addClass("logo-diferente");
             });
-        }
+        })
 
     </script>
+-->
         
     
          <?php 
@@ -173,6 +175,50 @@
         <p>Qualidade e rapidez</p>
         
 
+    </div>
+    
+    <div id="funcionario_mes" class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2> Funcionário do mês </h2>
+                <h4> Conheça nossos colaboradores que se destacaram nesse último mês
+                </h4>
+                <br> 
+                <h4> Quer ser o próximo e concorrer a prêmios e vale presentes na Steam? </h4> <br>
+                <button class="btn btn-success"> Recrutamento </button>
+                
+            </div>
+            <div class="col-sm-6 col-funcionarios">
+                <div class="funcionario-item funcionario-2">
+                    <div class="funcionario-image">
+                        <div class="funcionario-badge"> 
+                            <img src="images/badges/segundo.png" class="funcionario_mes_badge_img" height="55px">
+                        </div>
+                        <img src="images/colaboradores/diego_cyrillo_cracha.png" class="funcionario_mes_img" height="100px"> 
+                    </div>
+                    <div class="funcionario-name"> Diego Cyrillo </div>
+                </div>
+                <div class="funcionario-item funcionario-1">
+                    <div class="funcionario-image">
+                        <div class="funcionario-badge"> 
+                            <img src="images/badges/primeiro.png" class="funcionario_mes_badge_img" height="75px">
+                        </div>
+                        <img src="images/colaboradores/netolee_cracha.png" class="funcionario_mes_img" height="100px"> 
+                    </div>
+                    <div class="funcionario-name"> Netolee MG / BR  </div>
+                </div>
+                <div class="funcionario-item funcionario-3">
+                    <div class="funcionario-image">
+                        <div class="funcionario-badge"> 
+                            <img src="images/badges/terceiro.png" class="funcionario_mes_badge_img" height="55px">
+                        </div>
+                        <img src="images/colaboradores/diego_cyrillo_cracha.png" class="funcionario_mes_img" height="100px"> 
+                    </div>
+                    <div class="funcionario-name"> Junin2024 </div>
+                </div>
+                
+            </div>
+        </div>
     </div>
 
 
@@ -334,8 +380,8 @@
                     </div>
                     <div class="col-sm-12 social-youtube social-metro">
                     <a href="https://www.youtube.com/channel/UCqQ-tw6MbfDd0LAKlBiCDjw" target="_blank"> <img
-                                src="https://abrilexame.files.wordpress.com/2017/08/new-youtube-logo-840x402.jpg?quality=70&strip=info&w=840"
-                                height="70px"> </a>
+                                src="https://cdn.iconscout.com/icon/free/png-256/youtube-80-189751.png"
+                                height="130px"> </a>
                     </div>
                     
                 

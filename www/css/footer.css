@@ -23,7 +23,7 @@
     height: 5rem;
     color: white;
     border-radius: 10px;
-    box-shadow: 1px 1px 15px #0f0f0f;
+    box-shadow: 2px 2px 15px #787878;
 }
 .bt-contratando:hover{ 
     text-decoration: none !important;

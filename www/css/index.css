@@ -396,3 +396,92 @@ footer .glyphicon {
     background: #3a72bd;
 }
 
+
+.jumbotron{
+    margin-bottom: 0px!important;
+}
+#sobre {
+    padding: 25px;
+}
+
+#funcionario_mes {
+    margin-top: -50px;
+    margin-bottom: 50px;
+/*    margin-left: 50px;*/
+/*    margin-right: 50px;*/
+    background: white;
+    border: 1px solid #e6e6e6;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.col-funcionarios {
+/*    background-color: red;*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+@media (max-width: 767px){
+    .col-funcionarios{
+        margin-top: 40px;
+    } margin-top: 0px !important;
+}
+@media (max-width: 468px){
+    .col-funcionarios{
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+    }
+    .funcionario-item{
+        box-shadow: none !important;
+    }
+    .funcionario-1{
+        margin-top: 0px !important;
+    }
+}
+
+.funcionario-item {
+    text-align: center;
+    border: 1px solid #e6e6e6;
+    background: #f0f0f0;
+/*    background: white;*/
+/*    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);*/
+    padding: 15px 10px 15px 10px;
+}
+
+.funcionario-badge {
+    transform: rotate(-15deg);
+    margin-top: -35px;
+    margin-bottom: 15px;
+}
+
+.funcionario_mes_img {
+    z-index: 2;
+}
+
+.funcionario_mes_badge_img {
+}
+
+.funcionario-name {
+    font-size: 1.6rem;
+    font-weight: 600;
+/*    background: red;*/
+    height: 50px;
+    display:flex;
+    justify-content:center;
+    align-items:center
+    
+}
+
+.funcionario-1 {
+    margin-top: -25px;
+/*    margin-bottom: 15px;*/
+    z-index: 10;
+}
+
+.funcionario-3 {
+/*    margin-top: 10px;*/
+/*    margin-bottom: -10px*/
+}
+
+.funcionario-image {
+    display: 
+}
