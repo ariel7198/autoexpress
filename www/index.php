@@ -185,7 +185,7 @@
                 </h4>
                 <br> 
                 <h4> Quer ser o próximo e concorrer a prêmios e vale presentes na Steam? </h4> <br>
-                <button class="btn btn-success"> Recrutamento </button>
+                <button class="btn btn-success"> <a href="recrutamento"> Recrutamento </a> </button>
                 
             </div>
             <div class="col-sm-6 col-funcionarios">
@@ -212,7 +212,7 @@
                         <div class="funcionario-badge"> 
                             <img src="images/badges/terceiro.png" class="funcionario_mes_badge_img" height="55px">
                         </div>
-                        <img src="images/colaboradores/diego_cyrillo_cracha.png" class="funcionario_mes_img" height="100px"> 
+                        <img src="images/colaboradores/junin_cracha.png" class="funcionario_mes_img" height="100px"> 
                     </div>
                     <div class="funcionario-name"> Junin2024 </div>
                 </div>
@@ -374,7 +374,7 @@
                                 class="social-trucksbook" height="60px"> </a>
                     </div>
                     <div class="col-sm-12 social-discord social-metro">
-                    <a href="https://discord.gg/HUX4gY" target="_blank"> <img
+                    <a href="https://discord.gg/Zv9K2nE" target="_blank"> <img
                                 src="https://discordapp.com/assets/7998ff7e4d140a98fdde8e1683167c09.svg" height="90px">
                         </a>
                     </div>
